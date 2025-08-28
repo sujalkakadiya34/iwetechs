@@ -1,0 +1,330 @@
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  gap: 50px;
+}
+
+/* Left Side */
+.about-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.about-img-top-img{
+    width: 400px;
+}
+.about-img-bottom-img{
+    position: absolute;
+    width: 420px;
+    margin-left: 200px;
+    bottom: -94px;
+}
+
+.about-img-wrapper {
+  margin-left: -50px;
+  position: relative;
+  margin-top: -6px;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about-logo {
+  width: 200px;        /* logo size */
+  margin-bottom: 15px; /* space below logo */
+  display: block; 
+  float: left; 
+  margin-left: -250px;
+  margin-top: 70px;
+}
+
+.about-overlay-card {
+  position: absolute;
+  bottom: 156px;
+  left: 340px;
+  background: #20ace3;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  z-index: 2;
+}
+
+.about-overlay-card h2 {
+  font-size: 35px;
+  margin: 0;
+  margin-left: -24px;
+}
+
+.about-overlay-card p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Right Side */
+.about-right {
+  flex: 1;
+  margin-right: -200px;
+}
+
+.about-subtitle {
+  color: #21ade3;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 16px;
+  margin-top: 70px;
+  margin-bottom: 46px;
+}
+
+.about-title {
+  font-size: 41px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: -50px;
+}
+
+.about-title span {
+  color: #222;
+}
+
+.about-description {
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.about-subtitle-h4{
+    font-size: 18px;
+}
+
+/* Services */
+.about-services {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.about-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-left: 40px
+}
+
+.service-icon {
+  font-size: 25px;
+  margin-left: -10px;
+  margin-bottom: -5px;
+}
+
+/* List */
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.about-list-li{
+    font-size: 40px;
+}
+
+.about-list li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Button */
+.about-btn {
+  background: #034874;
+  color: white;
+  border: none;
+  padding: 28px 35px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.5s ease, transform 0.3s ease;
+  margin-top: 30px;
+}
+
+.about-btn:hover {
+  background: linear-gradient(135deg, #5a00d2, #20ace3);
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(90, 0, 210, 0.4);
+}
+
+/* Extra shine effect */
+.about-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.about-btn:hover::after {
+  left: 100%;
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-left, .about-right {
+    width: 100%;
+  }
+
+  .about-overlay-card {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Large screens */
+@media (max-width: 1200px) {
+  .about-container {
+    padding: 40px 6%;
+    gap: 30px;
+  }
+
+  .about-title {
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .about-description {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .about-overlay-card {
+    padding: 20px 30px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;       /* ✅ centers all children */
+    text-align: center;
+    padding: 40px 8%;
+    gap: 30px;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-img-top-img,
+  .about-img-bottom-img {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+  }
+
+  .about-overlay-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 20px auto;
+    padding: 18px 25px;
+  }
+
+  .about-services {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .about-service {
+    margin: 10px;
+  }
+
+  .about-title {
+    font-size: 30px;
+  }
+
+  .about-subtitle-h4 {
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .about-container {
+    padding: 25px 15px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-description {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .about-overlay-card {
+    padding: 12px 15px;
+    font-size: 13px;
+    margin: 15px auto;
+  }
+
+  .about-overlay-card h2 {
+    font-size: 22px;
+  }
+
+  .about-overlay-card p {
+    font-size: 14px;
+  }
+
+  .about-services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-service {
+    margin: 10px 0;
+  }
+
+  .about-list {
+    font-size: 14px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .about-btn {
+    width: 100%;
+    font-size: 13px;
+    padding: 12px;
+    margin: 0 auto;
+  }
+}
