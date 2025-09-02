@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Dealing.css";
 
 function Dealing() {
@@ -13,30 +13,45 @@ function Dealing() {
     { icon: "📱", title: "App Development" },
   ];
 
-  // duplicate services 3x to ensure smooth looping
   const loopedServices = [...services, ...services, ...services];
 
   const [index, setIndex] = useState(0);
   const [noTransition, setNoTransition] = useState(false);
 
-  const cardWidth = 190; // card + margin
+  const sliderRef = useRef(null);
+
+  // Compute the step width from the actual slider width on mobile,
+  // fixed steps on larger screens.
+  const computeCardWidth = () => {
+    const containerW = sliderRef.current?.clientWidth || window.innerWidth;
+    if (containerW <= 576) return containerW;  // 1 full-width card on mobile
+    if (containerW <= 992) return 240;         // tablet step
+    return 200;                                 // desktop step
+  };
+
+  const [cardWidth, setCardWidth] = useState(computeCardWidth());
   const totalLength = services.length;
+
+  useEffect(() => {
+    const onResize = () => setCardWidth(computeCardWidth());
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   // Auto move every 2s
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => prev + 1);
-    }, 2000);
-    return () => clearInterval(interval);
+    const id = setInterval(() => setIndex((p) => p + 1), 2000);
+    return () => clearInterval(id);
   }, []);
 
-  // Loop back seamlessly when reaching 2nd copy
+  // Seamless loop
   useEffect(() => {
     if (index >= totalLength * 2) {
-      setTimeout(() => {
+      const t = setTimeout(() => {
         setNoTransition(true);
-        setIndex(totalLength); // jump back to middle copy
-      }, 600); // after transition ends
+        setIndex(totalLength);
+      }, 600);
+      return () => clearTimeout(t);
     } else {
       setNoTransition(false);
     }
@@ -61,7 +76,7 @@ function Dealing() {
         </div>
       </div>
 
-      <div className="services-slider">
+      <div className="services-slider" ref={sliderRef}>
         <div
           className="services-track"
           style={{

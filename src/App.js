@@ -5,6 +5,7 @@ import Bgimg from './Bgimg';
 import AboutCompany from './AboutCompany';
 import Service from './Service';
 import Dealing from './Dealing';
+import ReadySection from './ReadySection';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <AboutCompany />
         <Service />
         <Dealing />
+        <ReadySection />
       </>
   );
 }

@@ -38,13 +38,11 @@
   margin-top: 25px;
 }
 
-/* -------- Step Slider -------- */
+/* -------- Circular Slider -------- */
 .services-slider {
   overflow: hidden;
   background: #1d1729;
-  /* margin-left: 80px;
-  margin-right:80px; */
-  padding: 60px 10px;
+  padding: 60px 20px;
   box-sizing: border-box;
   position: relative;
 }
@@ -55,9 +53,8 @@
 }
 
 .service-card-de {
-  margin-left: 450px;
   background: #241b36;
-  width: 170px;
+  width: 190px;
   height: 200px;
   padding: 40px 20px;
   text-align: center;
@@ -85,6 +82,7 @@
   font-size: 32px;
   color: #9a67ff;
   border: 2px solid #9a67ff;
+  transition: all 0.3s ease;
 }
 
 .service-title-h3 {
@@ -114,8 +112,232 @@
   border-color: #25a7e2;
 }
 
-@media (max-width: 600px) {
+ 
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  .more-services-txt {
+    flex-direction: column;    
+    text-align: left;          
+    gap: 30px;
+    padding: 40px 20px;        
+  }
+
+  .more-services-left,
+  .more-services-right {
+    width: 100%;
+    margin: 0;                
+  }
+
+  .more-services-txt-h1 {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  .more-services-txt-p2 {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (≤ 576px) */
+@media (max-width: 576px) {
+  .more-services-txt {
+    flex-direction: column;
+    text-align: left;         
+    gap: 20px;
+    padding: 25px 15px;        
+  }
+
+  .more-services-left,
+  .more-services-right {
+    width: 100%;
+    margin: 0;                
+  }
+
+  .more-services-txt-h1 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .more-services-txt-p1 {
+    font-size: 13px;
+  }
+
+  .more-services-txt-p2 {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+
+
+/* ===== Responsive slider/cards ===== */
+/*   (≥1200px):   */
+@media (min-width: 1200px) {
+  .service-card-de { width: 240px; height: 240px; }
+}
+
+/* Tablets (577px–992px):   */
+@media (min-width: 577px) and (max-width: 992px) {
+  .service-card-de { width: 220px; height: auto; }
+}
+
+/* Mobiles (≤576px):  */
+@media (max-width: 576px) {
+  .services-slider {
+    padding-left: 0;
+    padding-right: 0;   
+  }
+
+  .services-track {
+    display: flex;
+    flex-wrap: nowrap;   
+    justify-content: flex-start;
+  }
+
   .service-card-de {
-    width: 160px;
+    flex: 0 0 100%;      
+    width: 100%;
+    max-width: none;
+    margin: 0;          
+    height: auto;
+  }
+}
+
+
+
+ 
+.ready-section {
+  width: 100%;
+  min-height: 350px;
+  background: 
+    linear-gradient(#823cffd9, #823cffd9),
+    url("https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: white;
+}
+
+ 
+.ready-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+ 
+.ready-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.ready-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid white;
+}
+
+ 
+.ready-right {
+  flex: 2;
+  max-width: 600px;
+}
+
+.ready-title {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.ready-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.ready-list li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.ready-icon {
+  color: #fff;
+  background: #6a1b9a;
+  border-radius: 50%;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+ 
+.ready-btn-wrapper {
+  text-align: left;
+}
+
+.ready-btn {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  background: white;
+  color: #5b0ee6;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.ready-btn:hover {
+  background: #5b0ee6;
+  color: white;
+}
+
+/* ✅ Responsive */
+@media (max-width: 992px) {
+  .ready-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ready-btn-wrapper {
+    text-align: center;
+  }
+
+  .ready-title {
+    font-size: 26px;
+  }
+
+  .ready-img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ready-section {
+    min-height: auto;
+    padding: 40px 15px;
+  }
+
+  .ready-title {
+    font-size: 22px;
+  }
+
+  .ready-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ready-list li {
+    font-size: 14px;
+  }
+
+  .ready-btn {
+    width: 100%;
   }
 }
