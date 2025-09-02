@@ -155,6 +155,7 @@
   cursor: pointer;
   transition: background 0.5s ease, transform 0.3s ease;
   margin-top: 30px;
+  
 }
 
 .about-btn:hover {
@@ -181,53 +182,13 @@
   left: 100%;
 }
 
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-left, .about-right {
-    width: 100%;
-  }
-
-  .about-overlay-card {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-/* Large screens */
-@media (max-width: 1200px) {
-  .about-container {
-    padding: 40px 6%;
-    gap: 30px;
-  }
-
-  .about-title {
-    font-size: 38px;
-    text-align: center;
-  }
-
-  .about-description {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .about-overlay-card {
-    padding: 20px 30px;
-  }
-}
-
-/* Tablets */
+ 
 @media (max-width: 992px) {
   .about-container {
     flex-direction: column;
-    align-items: center;       /* ✅ centers all children */
+    align-items: center;
     text-align: center;
-    padding: 40px 8%;
+    padding: 40px 5%;
     gap: 30px;
   }
 
@@ -237,82 +198,113 @@
     margin: 0 auto;
     text-align: center;
   }
-
+ 
   .about-img-top-img,
   .about-img-bottom-img {
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 350px;
+    height: auto;
     display: block;
+    margin: 0 auto;
+    position: static;
+  }
+
+  .about-img-wrapper {
+    margin: 0 auto;
     position: relative;
+    max-width: 370px;
+    width: 100%;
+  }
+
+  .about-img-bottom-img {
+    margin-top: 18px;
   }
 
   .about-overlay-card {
     position: relative;
-    bottom: auto;
-    left: auto;
+    bottom: -16px;
+    left: -30px;
     transform: none;
     margin: 20px auto;
     padding: 18px 25px;
   }
 
+  .about-logo {
+    width: 160px;
+    margin: 0 auto 20px auto;
+    float: none;
+    display: block;
+  }
+
+  .about-title {
+    font-size: 28px;
+    margin-top: 10px;
+  }
+
   .about-services {
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 20px auto;
   }
 
   .about-service {
     margin: 10px;
   }
-
-  .about-title {
-    font-size: 30px;
-  }
-
-  .about-subtitle-h4 {
-    font-size: 18px;
-  }
 }
 
-/* Mobile */
+
+/* Mobile (≤ 576px) */
 @media (max-width: 576px) {
   .about-container {
-    padding: 25px 15px;
+    padding: 20px 15px;
     gap: 20px;
     text-align: center;
   }
 
+  .about-logo {
+    width: 120px;
+    margin: 0 auto 15px auto;
+  }
+
+  .about-subtitle {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
   .about-title {
-    font-size: 24px;
+    font-size: 22px;
+    margin: 10px 0;
   }
 
   .about-description {
     font-size: 14px;
     line-height: 1.5;
+    padding: 0 10px;
   }
 
   .about-overlay-card {
     padding: 12px 15px;
+    margin: 10px auto;
+    margin-left: 50px;
     font-size: 13px;
-    margin: 15px auto;
   }
 
   .about-overlay-card h2 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .about-overlay-card p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .about-services {
     flex-direction: column;
-    align-items: center;
+    gap: 15px;
   }
 
   .about-service {
-    margin: 10px 0;
+    margin: 0 auto;
   }
 
   .about-list {
@@ -323,8 +315,8 @@
 
   .about-btn {
     width: 100%;
-    font-size: 13px;
+    font-size: 14px;
     padding: 12px;
-    margin: 0 auto;
+    margin-top: 20px;
   }
 }

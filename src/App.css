@@ -285,7 +285,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(117, 204, 237, 0.7); /* purple shade */
+  background: rgba(117, 204, 237, 0.7);  
   z-index: 2;
 }
 
@@ -318,7 +318,7 @@
 }
 
 .hero-title span {
-  color: #034874; /* lighter purple accent */
+  color: #034874;  
   font-style: italic;
 }
 
@@ -427,6 +427,7 @@ html, body {
   .hero-btn {
     font-size: 13px;
     padding: 10px 18px;
+    
   }
 
   .hero-arrows {
@@ -437,7 +438,7 @@ html, body {
 /* Small Mobile (≤480px) */
 @media (max-width: 480px) {
   .hero-container {
-    height: 50dvh;  /* always fit visible screen */
+    height: 50dvh;   
     max-height: 50dvh;
     overflow: hidden;
   }
@@ -464,36 +465,236 @@ html, body {
 
 
 
+.service-section {
+  background: linear-gradient(to top, #1d1729 50%, #ffffff 50%);
+  padding: 60px 20px;
+  background-repeat: no-repeat;
+  background-size: 120% 149%; 
+  text-align: center;
+  margin-bottom: -5px;
+}
 
+.service-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
 
+.service-card {
+  width: 340px;
+  overflow: hidden;
+  text-align: center;
+  background: transparent;
+  cursor: pointer;
+}
 
+.image-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 2px 2px 0 0;
+}
 
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
+.service-card:hover .image-wrapper img {
+  transform: scale(1.1);
+}
 
+.content-box {
+  position: relative;
+  z-index: 2;
+}
 
+ 
+.icon-box {
+  position: absolute;
+  top: -108px;
+  left: 84.3%;
+  transform: translateX(-50%);
+  background: #1573bd;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.icon-box img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1); 
+}
+ 
+.service-title{
+  background-color: white;
+  padding: 1px 20px ;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 3;
+}
+.service-title:hover{
+  color: #0529c9;
+}
 
+.content-box h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  line-height: 1.5;
 
+}
+/* 📱 Small Mobile (portrait phones up to 480px) */
+@media (max-width: 480px) {
+  .service-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 
+  .service-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
+  .image-wrapper {
+    height: 180px;
+  }
 
+  .service-title h3 {
+    font-size: 14px;
+  }
 
+  .icon-box {
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+  }
 
+  .icon-box img {
+    width: 30px;
+    height: 30px;
+  }
+}
 
+/* 📱 Medium & Large Mobile (481px – 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .service-container {
+    justify-content: center;
+    gap: 30px;
+  }
 
+  .service-card {
+    width: 280px;
+  }
 
+  .image-wrapper {
+    height: 200px;
+  }
 
+  .service-title h3 {
+    font-size: 15px;
+  }
 
+  .icon-box {
+    top: -95px;
+    left: 75%;
+  }
+}
 
+/* 📱 Tablets & iPads (768px – 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .service-container {
+    gap: 35px;
+  }
 
+  .service-card {
+    width: 300px;
+  }
 
+  .image-wrapper {
+    height: 210px;
+  }
 
+  .service-title h3 {
+    font-size: 16px;
+  }
 
+  .icon-box {
+    top: -100px;
+    left: 80%;
+  }
+}
 
+/* 💻 Laptops & Desktops (1025px and up) */
+@media (min-width: 1025px) {
+  .service-container {
+    gap: 40px;
+  }
 
+  .service-card {
+    width: 340px;
+  }
 
+  .image-wrapper {
+    height: 220px;
+  }
 
+  .service-title h3 {
+    font-size: 16px;
+  }
 
+  .icon-box {
+    top: -108px;
+    left: 84.3%;
+  }
+}
 
+/* 📱 Small Mobile (portrait up to 480px) */
+@media (max-width: 480px) {
+  .service-section {
+    background: none !important;    
+    background-size: cover !important;
+  }
 
-/* Aboutcompany start */
+  .icon-box {
+    left: 50% !important;   
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Medium & Large Mobile (481px – 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .service-section {
+    background: none !important;
+    background-size: cover !important;
+  }
+
+  .icon-box {
+    left: 70% !important;  
+    transform: translateX(-50%);
+  }
+}
+
+/* 📱 Tablets & iPads (768px – 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .service-section {
+    background: none !important;
+    background-size: cover !important;
+  }
+
+  .icon-box {
+    left: 75% !important;
+    transform: translateX(-50%);
+  }
+}
+
