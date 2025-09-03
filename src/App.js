@@ -6,6 +6,8 @@ import AboutCompany from './AboutCompany';
 import Service from './Service';
 import Dealing from './Dealing';
 import ReadySection from './ReadySection';
+import Projects from './Projects';
+import ProjectsGrid from './ProjectsGrid';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Service />
         <Dealing />
         <ReadySection />
+        <Projects />
+        <ProjectsGrid />
       </>
   );
 }

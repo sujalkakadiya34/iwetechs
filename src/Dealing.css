@@ -211,7 +211,7 @@
   width: 100%;
   min-height: 350px;
   background: 
-    linear-gradient(#823cffd9, #823cffd9),
+    linear-gradient(#49a0c2, #823cffd9),
     url("https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;

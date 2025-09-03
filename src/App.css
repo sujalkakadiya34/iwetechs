@@ -2,8 +2,18 @@
 /* Overall */
 /* Container */
 .navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-family: "Arial", sans-serif;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Add spacing so content doesn't hide behind navbar */
+body {
+  padding-top: 80px; /* adjust to navbar height */
 }
 
 /* Top Bar */
@@ -698,3 +708,247 @@ html, body {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Project start */
+/* Section Wrapper */
+/* Section Wrapper */
+.projects-section {
+  width: 100%;
+  padding: 80px 100px;
+  font-family: "Arial", sans-serif;
+  background: #fff;
+}
+
+/* Container */
+.projects-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Left Column */
+.projects-left {
+  flex: 1;
+}
+
+.projects-subtitle {
+  color: #6c63ff; /* Purple accent */
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.projects-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #111;
+}
+
+/* Right Column */
+.projects-right {
+  flex: 1;
+  margin-top: 50px;
+}
+
+.projects-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 500px;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Tablets (<= 992px) */
+@media (max-width: 992px) {
+  .projects-section {
+    padding: 60px 50px;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .projects-title {
+    font-size: 36px;
+  }
+
+  .projects-description {
+    font-size: 15px;
+    max-width: 100%;
+    margin-top: 15px;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 50px 30px;
+  }
+
+  .projects-title {
+    font-size: 30px;
+    line-height: 1.4;
+  }
+
+  .projects-subtitle {
+    font-size: 13px;
+  }
+
+  .projects-description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 40px 20px;
+  }
+
+  .projects-title {
+    font-size: 26px;
+  }
+
+  .projects-subtitle {
+    font-size: 12px;
+  }
+
+  .projects-description {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+
+
+
+
+
+
+/* ProjectsGrid */
+/* ====== Projects Carousel ====== */
+/* ===== OUTER WRAPPER: this creates the fixed left/right space ===== */
+/* Adjust padding-left/right to create the left/right blank areas */
+.slider-wrapper {
+  width: 100%;
+  padding: 0 100px;            /* <-- LEFT and RIGHT blank area (fixed) */
+  box-sizing: border-box;
+  background: #fff;
+}
+
+/* VIEWPORT that hides overflow - images slide inside this viewport only */
+.slider-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* TRACK (flex row that actually moves) */
+.slider-track {
+  display: flex;
+  gap: var(--gap, 20px);      /* gap between slides */
+  align-items: stretch;
+  will-change: transform;
+  /* default CSS variables */
+  --spv: 3;
+  --gap: 20px;
+}
+
+/* Each slide: calc width so exactly `--spv` slides fit inside viewport with gaps */
+.slide {
+  flex: 0 0 calc((100% - ( (var(--spv) - 1) * var(--gap) )) / var(--spv));
+  position: relative;
+  overflow: hidden;
+   box-sizing: border-box;
+}
+
+/* fixed visual frame for each slide (keeps equal height) */
+.slide-img {
+  display: block;
+  width: 100%;
+  height: 580px;                 /* fixed height - keeps all frames equal */
+  object-fit: cover;             /* crop to fill without distortion */
+  transition: transform 0.5s ease;
+}
+
+/* zoom inside the frame on hover (frame doesn't change) */
+.slide:hover .slide-img {
+  transform: scale(1.08);
+}
+
+/* overlay content bottom */
+.slide-overlay {
+  position: absolute;
+  inset: 0;                      /* overlay covers image area */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.65) 100%);
+}
+
+.slide-title {
+  color: #fff;
+  font-weight: 700;
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.slide-cat {
+  color: #189fd4;
+  font-weight: 600;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+/* Mobile: 1 per row and reduce outer padding so space remains but smaller */
+@media (max-width: 768px) {
+  .slider-wrapper { padding: 0 16px; } /* smaller left/right space on mobile */
+  .slider-track { --spv: 1; --gap: 12px; }
+  .slide-img { height: 220px; }
+}
+
+/* Optional: slightly narrower padding on medium screens */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .slider-wrapper { padding: 0 48px; }
+  .slider-track { --spv: 3; --gap: 16px; }
+  .slide-img { height: 300px; }
+}
+
+/* pagination dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.dot {
+  width: 28px;
+  height: 6px;
+  border-radius: 3px;
+  background: #bfbcc6; /* gray */
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #189fd4; /* purple (active) */
+}

@@ -9,7 +9,7 @@ const ReadySection = () => {
         {/* Left Circle Image */}
         <div className="ready-left">
           <img
-            src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
+            src = "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
             alt="Team Work"
             className="ready-img"
           />
