@@ -917,22 +917,21 @@ html, body {
   margin: 0;
 }
 
-/* ===== RESPONSIVE ===== */
-/* Mobile: 1 per row and reduce outer padding so space remains but smaller */
+ 
 @media (max-width: 768px) {
-  .slider-wrapper { padding: 0 16px; } /* smaller left/right space on mobile */
+  .slider-wrapper { padding: 0 16px; }  
   .slider-track { --spv: 1; --gap: 12px; }
   .slide-img { height: 220px; }
 }
 
-/* Optional: slightly narrower padding on medium screens */
+ 
 @media (min-width: 769px) and (max-width: 1200px) {
   .slider-wrapper { padding: 0 48px; }
   .slider-track { --spv: 3; --gap: 16px; }
   .slide-img { height: 300px; }
 }
 
-/* pagination dots */
+ 
 .slider-dots {
   display: flex;
   justify-content: center;
@@ -945,10 +944,50 @@ html, body {
   width: 28px;
   height: 6px;
   border-radius: 3px;
-  background: #bfbcc6; /* gray */
+  background: #bfbcc6;  
   transition: background 0.3s;
 }
 
 .dot.active {
-  background: #189fd4; /* purple (active) */
+  background: #189fd4;  
 }
+
+/* Small Mobile (<=480px) */
+@media (max-width: 480px) {
+  .slider-dots {
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+  .dot {
+    width: 18px;
+    height: 5px;
+  }
+}
+
+/* Tablets (481px – 992px) */
+@media (min-width: 481px) and (max-width: 992px) {
+  .slider-dots {
+    gap: 10px;
+    margin-top: 24px;
+    margin-bottom: 30px;
+  }
+  .dot {
+    width: 22px;
+    height: 5px;
+  }
+}
+
+/* Laptops & Desktops (>=993px) */
+@media (min-width: 993px) {
+  .slider-dots {
+    gap: 12px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .dot {
+    width: 28px;
+    height: 6px;
+  }
+}
+
