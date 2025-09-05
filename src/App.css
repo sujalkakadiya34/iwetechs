@@ -2096,6 +2096,9 @@ html, body {
   font-size: 16px;
 }
 
+.footer-socials {
+  margin-left: -6px;
+}
 
 /* Socials */
 .footer-socials a {
@@ -2103,21 +2106,25 @@ html, body {
   margin-right: 10px;
   font-size: 20px;
   color: #fff;
-  background: #0998c4;
+  background: #2c1947;
   padding: 8px;
   border-radius: 50%;
   transition: 0.3s;
 }
 .footer-socials a:hover {
   background: #fff;
-  color: #6a1b9a;
+  color: #38b4e6;
+}
+
+.footer-contact {
+  margin-left: -60px;  /* adjust this value as needed */
 }
 
 /* Links */
 .footer-col h3 {
   font-size: 20px;
   color: #fff;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   position: relative;
 }
 .footer-col h3::after {
@@ -2154,6 +2161,11 @@ html, body {
 /* Newsletter */
 .footer-col.newsletter {
   margin-left: -120px; 
+}
+
+.footer-contact p {
+  margin-bottom: 6px;
+  line-height: 1.6;      
 }
 
 

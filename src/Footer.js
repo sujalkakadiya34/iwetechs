@@ -50,17 +50,14 @@ function Footer() {
             </form>
             </div>
 
-
-
-        {/* Column 4: Contact */}
-        <div className="footer-col">
+         {/* Column 4: Contact */}
+        <div className="footer-col footer-contact">
           <h3>Contact</h3>
-          {/* <p>📞 + 88 (9800) 6802</p> */}
           <p>📞 +91 9664697037</p>
           <p>✉️ sujalkakadiya1296@gmail.com</p>
-            <p>📍 1017, RK Supreme, Near nana mava circle, 150 feet ring road,
-                Rajkot, Gujarat - 360005
-            </p>
+          <p>📍 1017, RK Supreme, Near nana mava circle, 150 feet ring road,
+              Rajkot, Gujarat - 360005
+          </p>
         </div>
       </div>
 
