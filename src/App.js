@@ -8,6 +8,12 @@ import Dealing from './Dealing';
 import ReadySection from './ReadySection';
 import Projects from './Projects';
 import ProjectsGrid from './ProjectsGrid';
+import Testimonials from './Testimonials'; 
+import Expert from './Expert';
+import Solutionimage from './Solutionimage';
+import News from './News';
+import CtaSection from './CtaSection'
+import Footer from './Footer'
 
 function App() {
   return (
@@ -20,6 +26,12 @@ function App() {
         <ReadySection />
         <Projects />
         <ProjectsGrid />
+        <Testimonials />
+        <Expert />
+        <Solutionimage />
+        <News />
+        <CtaSection />
+        <Footer />
       </>
   );
 }

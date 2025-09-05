@@ -96,8 +96,7 @@ const trackStyle = {
 
 
 return (
-  <section section className="slider-wrapper">
- 
+  <section className="slider-wrapper">
     <div className="slider-viewport">
       <div ref={trackRef} className="slider-track" style={trackStyle}>
         {extended.map((p, i) => (
