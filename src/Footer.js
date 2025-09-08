@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdEmail, MdLocationOn } from "react-icons/md";
 import { FaTwitter, FaFacebookF, FaPinterestP, FaInstagram, FaPaperPlane } from "react-icons/fa";
 // import { Link } from "react-router-dom";
 
@@ -8,13 +10,13 @@ function Footer() {
     <footer className="footer">
       <div className="footer-container">
         
-        {/* Column 1: Logo + About */}
+ 
         <div className="footer-col">
         <div className="footer-logo">
             <img src="./assets/circlelogo.png" alt="iwetechs logo" />
             <span>iwetechs</span>
         </div>
-        <p>
+        <p className="iw-p-txt">
             We work with a passion of taking challenges and creating new ones in
             advertising sector.
         </p>
@@ -26,7 +28,6 @@ function Footer() {
         </div>
         </div>
 
-        {/* Column 2: Links */}
         <div className="footer-col">
           <h3>Links</h3>
           <ul className="footer-col-ul">
@@ -37,8 +38,7 @@ function Footer() {
             <li><a href="https://iwetechs.vercel.app/">Contacts</a></li>
           </ul>
         </div>
-
-            {/* Column 3: Newsletter */}
+           
             <div className="footer-col newsletter">
             <h3>Newsletter</h3>
             <p className="footer-col-newsletter-p">Signup for our latest news & articles. We <br></br>
@@ -50,18 +50,30 @@ function Footer() {
             </form>
             </div>
 
-         {/* Column 4: Contact */}
-        <div className="footer-col footer-contact">
-          <h3>Contact</h3>
-          <p>📞 +91 9664697037</p>
-          <p>✉️ sujalkakadiya1296@gmail.com</p>
-          <p>📍 1017, RK Supreme, Near nana mava circle, 150 feet ring road,
-              Rajkot, Gujarat - 360005
-          </p>
-        </div>
+            <div className="footer-col footer-contact">
+              <h3 className="footer-col-contact">Contact</h3>
+
+              <div className="contact-item">
+                <FaPhoneAlt className="icon" />
+                <span>+91 9664697037</span>
+              </div>
+
+              <div className="contact-item">
+                <MdEmail className="icon" />
+                <span>sujalkakadiya1296@gmail.com</span>
+              </div>
+
+              <div className="contact-item">
+                <MdLocationOn className="icon" />
+                <span>
+                  1017, RK Supreme, Near nana mava <br />
+                  circle, 150 feet ring road, Rajkot, <br />
+                  Gujarat - 360005
+                </span>
+              </div>
+            </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="footer-bottom">
         <p>© All Copyright 2022 by <a href="https://iwetechs.vercel.app/">Pixydrops</a></p>
       </div>
