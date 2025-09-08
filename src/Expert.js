@@ -1,6 +1,7 @@
 import React from "react";
 import { FaShareAlt, FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from "react-icons/fa"; // Added missing icons
 import "./App.css";
+import "./rspsv.css";
 
 const TEAM = [
   {
@@ -23,7 +24,6 @@ const TEAM = [
 function Expert() {
   return (
     <section className="expert-section">
-      {/* Title & Intro */}
       <div className="expert-container">
         <div className="expert-left">
           <p className="expert-subtitle">Our Expert People</p>

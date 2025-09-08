@@ -37,8 +37,8 @@
 }
 
 .about-logo {
-  width: 200px;        /* logo size */
-  margin-bottom: 15px; /* space below logo */
+  width: 200px;        
+  margin-bottom: 15px;  
   display: block; 
   float: left; 
   margin-left: -250px;
@@ -144,7 +144,6 @@
   color: #333;
 }
 
-/* Button */
 .about-btn {
   background: #034874;
   color: white;
@@ -164,7 +163,6 @@
   box-shadow: 0 8px 20px rgba(90, 0, 210, 0.4);
 }
 
-/* Extra shine effect */
 .about-btn::after {
   content: "";
   position: absolute;

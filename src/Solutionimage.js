@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import "./rspsv.css";
 import { FaPlay, FaTimes } from "react-icons/fa";
 
 function Solutionimage() {

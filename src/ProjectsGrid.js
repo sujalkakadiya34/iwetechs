@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
+import "./rspsv.css";
 
 const PROJECTS = [
   { img: "./assets/project1.webp", title: "Web Development", category: "DESIGN / IDEAS" },
