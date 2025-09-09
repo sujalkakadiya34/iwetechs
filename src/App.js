@@ -14,24 +14,27 @@ import Solutionimage from './Solutionimage';
 import News from './News';
 import CtaSection from './CtaSection'
 import Footer from './Footer'
+import Testimonialss from "./Testimonialss";
 
 function App() {
   return (
       <>
         <Navbar /> 
         <Bgimg />
-        <AboutCompany />
-        <Service />
-        <Dealing />
-        <ReadySection />
-        <Projects />
-        <ProjectsGrid />
-        <Testimonials />
-        <Expert />
-        <Solutionimage />
-        <News />
-        <CtaSection />
-        <Footer />
+        {/* <AboutCompany /> */}
+        {/* <Service /> */}
+        {/* <Dealing /> */}
+        {/* <ReadySection /> */}
+        {/* <Projects /> */}
+        {/* <ProjectsGrid /> */}
+                         {/* <Testimonials /> */}
+        {/* <Expert /> */}
+        {/* <Solutionimage /> */}
+        {/* <News /> */}
+        {/* <CtaSection /> */}
+        {/* <Footer /> */}
+                         {/* <Testimonials /> */}
+        {/* <Testimonialss /> */}
       </>
   );
 }

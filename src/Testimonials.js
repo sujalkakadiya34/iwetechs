@@ -2,119 +2,141 @@ import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import "./rspsv.css";
 
-const TESTIMONIALS = [
-  {
-    img: "https://i.pravatar.cc/150?img=1",
-    name: "Aleesha Smith",
-    role: "Senior Developer",
-    rating: "★★★★★",
-    text: "This is due to their excellent service, competitive pricing and customer support. It’s refreshing to get such a personal touch. Duis aute lorem ipsum is simply free text repreh."
-  },
+const DATA = [
   {
     img: "https://i.pravatar.cc/150?img=2",
     name: "Mike Hardson",
     role: "Senior Designer",
-    rating: "★★★★★",
-    text: "This is due to their excellent service, competitive pricing and customer support. It’s refreshing to get such a personal touch. Duis aute lorem ipsum is simply free text repreh."
+    rating: 5,
+    text:
+      "This is due to their excellent service, competitive pricing and customer support. It’s refreshing to get such a personal touch."
+  },
+  {
+    img: "https://i.pravatar.cc/150?img=1",
+    name: "Aleesha Smith",
+    role: "Senior Developer",
+    rating: 5,
+    text:
+      "This is due to their excellent service, competitive pricing and customer support. It’s refreshing to get such a personal touch."
   },
   {
     img: "https://i.pravatar.cc/150?img=3",
     name: "Sophia Lee",
     role: "Project Manager",
-    rating: "★★★★★",
-    text: "The team was fantastic to work with. Their communication, dedication, and expertise exceeded our expectations. Duis aute lorem ipsum is simply free text repreh."
+    rating: 5,
+    text:
+      "The team was fantastic to work with. Their communication, dedication, and expertise exceeded our expectations."
   },
   {
     img: "https://i.pravatar.cc/150?img=4",
     name: "John Carter",
     role: "Team Lead",
-    rating: "★★★★★",
-    text: "Working with them has been a wonderful experience. Their timely delivery and professionalism make them stand out. Duis aute lorem ipsum is simply free text repreh."
+    rating: 5,
+    text:
+      "Working with them has been a wonderful experience. Their timely delivery and professionalism make them stand out."
   }
 ];
 
+const AUTOPLAY_MS = 3000;
+const TRANSITION_MS = 600;
+
 export default function Testimonials() {
-  const [perView, setPerView] = useState(window.innerWidth <= 668 ? 1 : 2);
+  const [perView, setPerView] = useState(window.innerWidth <= 768 ? 1 : 2);
 
-  useEffect(() => {
-    const handleResize = () => setPerView(window.innerWidth <= 768 ? 1 : 2);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+   const items = React.useMemo(() => {
+    const head = DATA.slice(-perView);
+    const tail = DATA.slice(0, perView);
+    return [...head, ...DATA, ...tail];
+  }, [perView]);
 
-  const extended = [...TESTIMONIALS, ...TESTIMONIALS.slice(0, perView)];
-  const trackRef = useRef(null);
-  const stepPxRef = useRef(0);
-  const [index, setIndex] = useState(0);
+   const [index, setIndex] = useState(perView);
   const [withTransition, setWithTransition] = useState(true);
 
-  const measureStep = () => {
+  const trackRef = useRef(null);
+  const stepPxRef = useRef(0);  
+
+   useEffect(() => {
+    const onResize = () => setPerView(window.innerWidth <= 768 ? 1 : 2);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+   const measureStep = () => {
     const track = trackRef.current;
     if (!track) return;
     const first = track.querySelector(".testimonial-slide");
     if (!first) return;
-    const rect = first.getBoundingClientRect();
-    const styles = window.getComputedStyle(track);
-    const gap = parseFloat(styles.gap || "0") || 0;
-    stepPxRef.current = Math.round(rect.width + gap);
+    const gap = parseFloat(getComputedStyle(track).gap || "0");
+    const w = first.getBoundingClientRect().width;
+    stepPxRef.current = Math.round(w + gap);
   };
 
-  useEffect(() => {
+   useEffect(() => {
     measureStep();
-    window.addEventListener("resize", measureStep);
-    const t = setTimeout(measureStep, 300);
+    const onResize = () => measureStep();
+    window.addEventListener("resize", onResize);
+     const t = setTimeout(measureStep, 50);
     return () => {
-      window.removeEventListener("resize", measureStep);
+      window.removeEventListener("resize", onResize);
       clearTimeout(t);
     };
+  }, []);
+
+   useEffect(() => {
+    setWithTransition(false);
+    setIndex(perView);
+    requestAnimationFrame(() => {
+      measureStep();
+      setWithTransition(true);
+    });
   }, [perView]);
 
+ 
   useEffect(() => {
-    const id = setInterval(() => setIndex((i) => i + 1), 4000);
+    const id = setInterval(() => setIndex((i) => i + 1), AUTOPLAY_MS);
     return () => clearInterval(id);
   }, []);
 
+  
   useEffect(() => {
-    if (index >= TESTIMONIALS.length) {
+    const realLen = DATA.length;
+    const edgeRight = realLen + perView;  
+    if (index >= edgeRight) {
       const t = setTimeout(() => {
         setWithTransition(false);
-        setIndex(0);
-      }, 620);
+        setIndex(perView); 
+        requestAnimationFrame(() => setWithTransition(true));
+      }, TRANSITION_MS);
       return () => clearTimeout(t);
-    } else if (!withTransition) {
-      requestAnimationFrame(() => setWithTransition(true));
     }
-  }, [index, withTransition]);
+  }, [index, perView]);
 
-  const stepPx = stepPxRef.current;
-  const offsetPx = stepPx ? -(index * stepPx) : 0;
-  const offsetPct = -(index * (100 / perView));
+  const step = stepPxRef.current || 0;
+  const translateX = -(index * step);
 
   const trackStyle = {
-    transform: stepPx
-      ? `translate3d(${offsetPx}px,0,0)`
-      : `translate3d(${offsetPct}%,0,0)`,
-    transition: withTransition ? "transform 600ms ease" : "none",
-    "--spv": perView,
-    "--gap": "30px"
+    transform: `translate3d(${translateX}px, 0, 0)`,
+    transition: withTransition ? `transform ${TRANSITION_MS}ms ease` : "none",
+    "--gap": "30px",
+    "--perView": perView
   };
 
-  return (
-    <div className="Testimonials-main-container">
-      <div className="Testimonials-container">
-        <p className="Testimonials-container-p1">— Client Testimonials</p>
-        <p className="Testimonials-container-p2">
-          <b>What They’re Talking?</b>
-        </p>
-      </div>
+  const activeDot =
+    (index - perView + DATA.length) % DATA.length;  
 
-      <section className="slider-wrapper testimonials-slider">
+  return (
+    <section className="Testimonials">
+      <header className="Testimonials-header">
+        <p className="eyebrow">— Client Testimonials</p>
+        <h2 className="title">What They’re Talking?</h2>
+      </header>
+
+      <div className="slider-wrapper">
         <div className="slider-viewport">
           <div ref={trackRef} className="slider-track" style={trackStyle}>
-            {extended.map((t, i) => (
+            {items.map((t, i) => (
               <div className="testimonial-slide" key={i}>
-                <div className="testimonial-card">
-                  {/* Avatar & Name */}
+                <article className="testimonial-card">
                   <div className="card-header">
                     <div className="profile">
                       <img src={t.img} alt={t.name} />
@@ -125,26 +147,29 @@ export default function Testimonials() {
                     </div>
                   </div>
 
-                  {/* Rating */}
-                  <div className="rating">{t.rating}</div>
-
-                  {/* Text */}
-                  <p className="testimonial-text">{t.text}</p>
-                </div>
+                  <div className="rating">
+                    {"★".repeat(t.rating)}
+                  </div>
+                  <p className="text">{t.text}</p>
+                </article>
               </div>
             ))}
           </div>
         </div>
 
         <div className="slider-dots">
-          {TESTIMONIALS.map((_, i) => {
-            const active = index % TESTIMONIALS.length === i;
-            return (
-              <span key={i} className={`dot ${active ? "active" : ""}`}></span>
-            );
-          })}
+          {DATA.map((_, i) => (
+            <span
+              key={i}
+              className={`dot ${i === activeDot ? "active" : ""}`}
+              onClick={() => {
+                setWithTransition(true);
+                setIndex(i + perView);
+              }}
+            />
+          ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
