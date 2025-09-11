@@ -336,6 +336,8 @@ html, body {
 /* end  Service.js */
 
 /* Dealing.js there own css file */
+  
+/* also end Dealing.js*/
 
 /* ReadySection.js */
 @media (max-width: 992px) {
@@ -523,8 +525,8 @@ html, body {
 }
 
 .Testimonials-header .eyebrow {
-  color: #7c6ff4;
-  font-size: 14px;
+  color: #0677be;
+  font-size: 16px;
   margin: 0 0 6px;
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Dealing.css";
 
-function Dealing() {
+export default function Dealing() {
   const services = [
     { icon: "💻", title: "Product Development" },
     { icon: "📢", title: "Digital Marketing" },
@@ -13,90 +13,114 @@ function Dealing() {
     { icon: "📱", title: "App Development" },
   ];
 
-  const loopedServices = [...services, ...services, ...services];
+  const [visibleCards, setVisibleCards] = useState(4);
+  const [cardWidth, setCardWidth] = useState(230);
+  const gap = 20;
+  const leftPad = 20;
+  const rightPad = 20;
 
-  const [index, setIndex] = useState(0);
-  const [noTransition, setNoTransition] = useState(false);
+  // Update visible cards dynamically based on screen width
+  useEffect(() => {
+    const updateVisibleCards = () => {
+      if (window.innerWidth <= 600) {
+        setVisibleCards(1); // Mobile
+      } else if (window.innerWidth <= 900) {
+        setVisibleCards(2); // Tablets
+      } else {
+        setVisibleCards(4); // Desktop
+      }
+    };
+    updateVisibleCards();
+    window.addEventListener("resize", updateVisibleCards);
+    return () => window.removeEventListener("resize", updateVisibleCards);
+  }, []);
 
-  const sliderRef = useRef(null);
+  const cardFull = cardWidth + gap;
+  const visibleAreaWidth = visibleCards * cardWidth + (visibleCards - 1) * gap;
+  const wrapperWidth = leftPad + visibleAreaWidth + rightPad;
 
-  // Compute the step width from the actual slider width on mobile,
-  // fixed steps on larger screens.
-  const computeCardWidth = () => {
-    const containerW = sliderRef.current?.clientWidth || window.innerWidth;
-    if (containerW <= 576) return containerW;  // 1 full-width card on mobile
-    if (containerW <= 992) return 240;         // tablet step
-    return 200;                                 // desktop step
+  const clonesBefore = services.slice(-visibleCards);
+  const clonesAfter = services.slice(0, visibleCards);
+  const slides = [...clonesBefore, ...services, ...clonesAfter];
+  const startIndex = visibleCards;
+
+  const [index, setIndex] = useState(startIndex);
+  const [transitionOn, setTransitionOn] = useState(true);
+  const trackRef = useRef(null);
+
+  // Auto-scroll effect
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setTransitionOn(true);
+      setIndex((prev) => prev + 1);
+    }, 2500);
+    return () => clearTimeout(t);
+  }, [index]);
+
+  // Loop back for infinite effect
+  const handleTransitionEnd = () => {
+    if (index >= services.length + visibleCards) {
+      setTransitionOn(false);
+      setIndex(startIndex);
+      setTimeout(() => setTransitionOn(true), 40);
+    }
   };
 
-  const [cardWidth, setCardWidth] = useState(computeCardWidth());
-  const totalLength = services.length;
-
-  useEffect(() => {
-    const onResize = () => setCardWidth(computeCardWidth());
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  // Auto move every 2s
-  useEffect(() => {
-    const id = setInterval(() => setIndex((p) => p + 1), 2000);
-    return () => clearInterval(id);
-  }, []);
-
-  // Seamless loop
-  useEffect(() => {
-    if (index >= totalLength * 2) {
-      const t = setTimeout(() => {
-        setNoTransition(true);
-        setIndex(totalLength);
-      }, 600);
-      return () => clearTimeout(t);
-    } else {
-      setNoTransition(false);
-    }
-  }, [index, totalLength]);
+  const translateX = -index * cardFull;
 
   return (
-    <>
-      <div className="more-services-txt">
-        <div className="more-services-left">
-          <p className="more-services-txt-p1">— What We’re Offering</p>
-          <h1 className="more-services-txt-h1">
-            Dealing in all Professional IT <br /> Services
-          </h1>
+    <div className="dealing-section">
+      {/* --------- TOP TEXT --------- */}
+      <div className="dealing-top-text">
+        <div className="top-left">
+          <span className="top-subtitle">— What We're Offering</span>
+          <h2 className="top-title">Dealing in all Professional IT Services</h2>
         </div>
-
-        <div className="more-services-right">
-          <p className="more-services-txt-p2">
-            There are many variations of passages of available but majority have
-            suffered alteration in some form, by humour or randomised words which
-            don’t look even slightly believable.
+        <div className="top-right">
+          <p className="top-description">
+            There are many variations of passages available, but majority have suffered alteration
+            in some form, by humour or randomised words which don’t look even slightly believable.
           </p>
         </div>
       </div>
 
-      <div className="services-slider" ref={sliderRef}>
+      {/* --------- SLIDER --------- */}
+      <div
+        className="carousel-wrapper"
+        style={{
+          width: `${wrapperWidth}px`,
+          paddingLeft: `${leftPad}px`,
+          paddingRight: `${rightPad}px`,
+          ["--card-width"]: `${cardWidth}px`,
+          ["--gap"]: `${gap}px`,
+        }}
+      >
         <div
-          className="services-track"
+          ref={trackRef}
+          className="carousel-track"
+          onTransitionEnd={handleTransitionEnd}
           style={{
-            transform: `translateX(-${index * cardWidth}px)`,
-            transition: noTransition ? "none" : "transform 0.6s ease-in-out",
+            transform: `translateX(${translateX}px)`,
+            transition: transitionOn ? "transform 0.6s ease-in-out" : "none",
           }}
         >
-          {loopedServices.map((service, i) => (
+          {slides.map((s, i) => (
             <div className="service-card-de" key={i}>
-              <div className="service-icon-1">{service.icon}</div>
-              <h3 className="service-title-h3">{service.title}</h3>
+              <div className="service-icon-1">{s.icon}</div>
+              <h3 className="service-title-h3">
+                {s.title.split(" ").map((word, idx) =>
+                  idx === 1 ? <><br />{word}</> : word + " "
+                )}
+              </h3>
               <p className="service-text">
-                Lorem Ipsum has been the industry text ever since then.
+                Lorem Ipsum has been the <br />
+                industry text ever since <br />
+                then.
               </p>
             </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
-
-export default Dealing;

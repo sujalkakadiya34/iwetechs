@@ -1088,7 +1088,7 @@ body {
 .team-icon {
   position: relative;     
   flex-shrink: 0;       
-  background: #6c63ff;
+  background: #38b4e6;
   color: #fff;
   padding: 16px;
   margin-right: -15px;
@@ -1527,7 +1527,7 @@ body {
   margin-right: 14px;
   font-size: 20px;
   color: #fff;
-  background: #2c1947;
+  background: #0998c4;
   border-radius: 50%;
   width: 43px;          
   height: 43px;
@@ -1556,7 +1556,7 @@ body {
   display: block;
   width: 30px;
   height: 2px;
-  background: #6a1b9a;
+  background: #0998c4;
   margin-top: 5px;
 }
 .footer-col-ul {
@@ -1602,7 +1602,7 @@ body {
 .contact-item .icon {
   font-size: 18px;
   margin-right: 10px;
-  color: #bb86fc; 
+  color: #0998c4; 
 }
 
 
@@ -1625,7 +1625,7 @@ body {
 }
 
 .newsletter-form button {
-  background: #6a1b9a;
+  background: #0998c4;
   border: none;
   color: #fff;
   padding: 0 15px;

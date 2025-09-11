@@ -24,59 +24,59 @@ function Navbar() {
         <nav className="menu">
           {/* Home Dropdown */}
           <div className="dropdown">
-            <a href="#" className="dropdown-toggle">Home</a>
+            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Home</a>
             <div className="dropdown-menu">
-              <a href="#">Home 1</a>
-              <a href="#">Home 2</a>
-              <a href="#">Home 3</a>
-              <a href="#">Home 4</a>
-              <a href="#">Home 5</a>
-              <a href="#">Header Versions</a>
+              <a href="https://iwetechs.vercel.app/">Home 1</a>
+              <a href="https://iwetechs.vercel.app/">Home 2</a>
+              <a href="https://iwetechs.vercel.app/">Home 3</a>
+              <a href="https://iwetechs.vercel.app/">Home 4</a>
+              <a href="https://iwetechs.vercel.app/">Home 5</a>
+              <a href="https://iwetechs.vercel.app/">Header Versions</a>
             </div>
           </div>
 
           {/* About */}
-          <a href="#">About</a>
+          <a href="https://iwetechs.vercel.app/">About</a>
 
           {/* Pages Dropdown */}
           <div className="dropdown">
-            <a href="#" className="dropdown-toggle">Pages</a>
+            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Pages</a>
             <div className="dropdown-menu">
-              <a href="#">Our Team</a>
-              <a href="#">Team Details</a>
+              <a href="https://iwetechs.vercel.app/">Our Team</a>
+              <a href="https://iwetechs.vercel.app/">Team Details</a>
             </div>
           </div>
 
           {/* Services Dropdown */}
           <div className="dropdown">
-            <a href="#" className="dropdown-toggle">Services</a>
+            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Services</a>
             <div className="dropdown-menu">
-              <a href="#">Service 1</a>
-              <a href="#">Service 2</a>
-              <a href="#">Service 3</a>
+              <a href="https://iwetechs.vercel.app/">Service 1</a>
+              <a href="https://iwetechs.vercel.app/">Service 2</a>
+              <a href="https://iwetechs.vercel.app/">Service 3</a>
             </div>
           </div>
 
           {/* Projects Dropdown */}
           <div className="dropdown">
-            <a href="#" className="dropdown-toggle">Projects</a>
+            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Projects</a>
             <div className="dropdown-menu">
-              <a href="#">Projects</a>
-              <a href="#">Project Details</a>
+              <a href="https://iwetechs.vercel.app/">Projects</a>
+              <a href="https://iwetechs.vercel.app/">Project Details</a>
             </div>
           </div>
 
           {/* Blog Dropdown */}
           <div className="dropdown">
-            <a href="#" className="dropdown-toggle">Blog</a>
+            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Blog</a>
             <div className="dropdown-menu">
-              <a href="#">Blog</a>
-              <a href="#">Blog Details</a>
+              <a href="https://iwetechs.vercel.app/">Blog</a>
+              <a href="https://iwetechs.vercel.app/">Blog Details</a>
             </div>
           </div>
 
           {/* Contact */}
-          <a href="#">Contact</a>
+          <a href="https://iwetechs.vercel.app/">Contact</a>
         </nav>
         {/* Right Section */}
         <div className="right-section">
