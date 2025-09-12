@@ -20,14 +20,14 @@ function App() {
       <>
         <Navbar /> 
         <Bgimg />
-        {/* <AboutCompany /> */}
+        <AboutCompany />
         <Service /> 
         <Dealing />
-        {/* <ReadySection /> */}
+        <ReadySection />
         <Projects />
         <ProjectsGrid />
-        {/* <Testimonials /> */}
-        {/* <Expert /> */}
+        <Testimonials />
+        <Expert />
         <Solutionimage />
         <News />
         <CtaSection />

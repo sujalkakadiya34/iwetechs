@@ -51,14 +51,14 @@ function Bgimg() {
         <button className="hero-btn">LEARN MORE</button>
       </div>
 
-      <div className="hero-arrows">
+      {/* <div className="hero-arrows">
         <button onClick={prevSlide} className="arrow-btn">
           &larr;
         </button>
         <button onClick={nextSlide} className="arrow-btn">
           &rarr;
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

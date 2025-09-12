@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutCompany.css";
-import "./rspsv.css";
+// import "./rspsv.css";
  
 function AboutCompany() {
   return (

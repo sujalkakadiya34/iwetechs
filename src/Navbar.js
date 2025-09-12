@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import "./rspsv.css";   
+// import "./rspsv.css";   
 // import { FaTwitter, FaFacebookF, FaPinterestP, FaInstagram, FaSearch, FaShoppingCart, FaPhoneAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 
@@ -24,36 +24,36 @@ function Navbar() {
         <nav className="menu">
           {/* Home Dropdown */}
           <div className="dropdown">
-            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Home</a>
+            <a href="" className="dropdown-toggle">Home</a>
             <div className="dropdown-menu">
-              <a href="https://iwetechs.vercel.app/">Home 1</a>
-              <a href="https://iwetechs.vercel.app/">Home 2</a>
-              <a href="https://iwetechs.vercel.app/">Home 3</a>
-              <a href="https://iwetechs.vercel.app/">Home 4</a>
-              <a href="https://iwetechs.vercel.app/">Home 5</a>
-              <a href="https://iwetechs.vercel.app/">Header Versions</a>
+              <a href="">Home 1</a>
+              <a href="">Home 2</a>
+              <a href="">Home 3</a>
+              <a href="">Home 4</a>
+              <a href="">Home 5</a>
+              <a href="">Header Versions</a>
             </div>
           </div>
 
           {/* About */}
-          <a href="https://iwetechs.vercel.app/">About</a>
+          <a href="">About</a>
 
           {/* Pages Dropdown */}
           <div className="dropdown">
-            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Pages</a>
+            <a href="" className="dropdown-toggle">Pages</a>
             <div className="dropdown-menu">
-              <a href="https://iwetechs.vercel.app/">Our Team</a>
-              <a href="https://iwetechs.vercel.app/">Team Details</a>
+              <a href="">Our Team</a>
+              <a href="">Team Details</a>
             </div>
           </div>
 
           {/* Services Dropdown */}
           <div className="dropdown">
-            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Services</a>
+            <a href="" className="dropdown-toggle">Services</a>
             <div className="dropdown-menu">
-              <a href="https://iwetechs.vercel.app/">Service 1</a>
-              <a href="https://iwetechs.vercel.app/">Service 2</a>
-              <a href="https://iwetechs.vercel.app/">Service 3</a>
+              <a href="">Service 1</a>
+              <a href="">Service 2</a>
+              <a href="">Service 3</a>
             </div>
           </div>
 

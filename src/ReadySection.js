@@ -1,6 +1,6 @@
 import React from "react";
 import "./Dealing.css";
-import "./rspsv.css"
+// import "./rspsv.css"
 import { FaCheckCircle } from "react-icons/fa";
 
 const ReadySection = () => {

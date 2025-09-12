@@ -551,7 +551,7 @@ body {
 
 /* Service.js */
 .service-section {
-  background: linear-gradient(to top, #1d1729 50%, #ffffff 50%);
+  background: linear-gradient(to top,#054063 50%, #ffffff 50%);
   padding: 60px 20px;
   background-repeat: no-repeat;
   background-size: 120% 149%; 
@@ -644,6 +644,7 @@ body {
   padding: 80px 100px;
   font-family: "Arial", sans-serif;
   background: #fff;
+  margin-bottom: -150px;
 }
  
 .projects-container {
@@ -774,183 +775,373 @@ body {
 }
  
 /* Testimonials */ 
-/* ================= Testimonials ================= */
 .Testimonials {
-  background: #f5f3fb;
-  padding: 64px 0;
+  --perView: 2;            
+  --card-w: 570px;         
+  --gap: 36px;             
+
+  background: #faf7ff;
+  padding: 72px 0;       
   text-align: center;
+  box-sizing: border-box;
 }
 
-.Testimonials-header .eyebrow {
-  color: #7c6ff4;
-  font-size: 14px;
-  margin: 0 0 6px;
-}
-
-.Testimonials-header .title {
-  margin: 0 0 36px;
+ .Testimonials .Testimonials-header .title {
   font-size: 32px;
   font-weight: 800;
-  color: #1a1423;
+  margin: 0 0 28px;
+  color: #1b1630;
 }
 
-.slider-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.slider-viewport {
-  overflow: hidden;
+ .Testimonials .slider-wrapper {
   width: 100%;
+  max-width: calc(var(--perView) * var(--card-w) + (var(--perView) - 1) * var(--gap) + 60px);
+  margin: 0 auto;              
+  padding: 40px 40px 5px 30px;  
+  box-sizing: border-box;
+  background-color: transparent;        
+  border-radius: 12px;  
 }
 
-.slider-track {
+ .Testimonials .slider-viewport {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;                    
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+ .Testimonials .slider-track {
   display: flex;
-  gap: var(--gap, 30px);
+  gap: var(--gap);
+  align-items: flex-start;
+  transition: transform 600ms ease;
   will-change: transform;
+  box-sizing: border-box;
 }
 
-.testimonial-slide {
-  flex: 0 0 calc(
-    (100% - (var(--perView, 2) - 1) * var(--gap, 30px))
-    / var(--perView, 2)
-  );
+ .Testimonials .testimonial-slide {
+  flex: 0 0 var(--card-w);
+  display: flex;
+  justify-content: center;    
+  box-sizing: border-box;
+  margin-bottom: -30px;
+  padding: 70px 40px  40px 65px;     
+  background-color: transparent;             
+}
+
+ .Testimonials .testimonial-card {
+  width: 100%;
+  max-width: var(--card-w);
+  background: #ffffff;
+  text-align: left;
+  padding: 150px 40px 36px;     
+  box-shadow: 0 18px 40px rgba(20, 18, 40, 0.02);
+  position: relative;
+  border-radius: none;
+  overflow: visible;
+  box-sizing: border-box;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+ .Testimonials .card-header {
+  position: relative;
+  display: block;
+  height: 0;  
+}
+
+ 
+.Testimonials .profile {
+  position: absolute;
+  left: 4px;
+  top: -95px;                  
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 5;
+  margin-top: -120px;
+  margin-left: -100px;
+  box-shadow: 0 10px 24px rgba(30, 25, 80, 0.12);
+  background: linear-gradient(135deg,#a52b2b,#0f0d0f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 12px solid #226383;      
+}
+
+ .Testimonials .profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+ .Testimonials .name-bubble {
+  position: absolute;
+  left: calc(26px + 92px - 145px);  
+  top: -182px;
+  /* background: linear-gradient(90deg, #6c63ff, #a369ff); */
+  background: #57a3d2;
+  color: #fff;
+  padding: 14px 85px;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(108, 99, 255, 0.12);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+ .Testimonials .name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+}
+.Testimonials .role {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255,255,255,0.88);
+  margin-top: 4px;
+  margin-bottom: 7px;
+  opacity: 0.95;
+}
+
+ .Testimonials .rating {
+  position: absolute;
+  right: 26px;
+  top: -105px;
+  right: -10px; 
+  color: #ffb400;
+  font-size: 25px;
+  letter-spacing: 2px;
+  z-index: 3;
+}
+
+ .Testimonials .card-header::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: -130px;
+  left: 10px;
+  width: 150px;
+  height: 0px;
+  padding: 20px;
+  border-radius: 8px;
+  border-bottom-right-radius: 999px;
+  background: linear-gradient(90deg, #a88ff1, #4cfdb9 60%);
+  opacity: 0.9;
+  z-index: 1;
+  pointer-events: none;
+}
+
+ .Testimonials .text {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: -30px;
+  max-width: 100%;
+}
+
+ .Testimonials .slider-dots {
   display: flex;
   justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
 }
-
-.testimonial-card {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  text-align: left;
-  background: #fff;
-  padding: 40px 24px 24px;
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  overflow: visible;
-}
-
-/* profile image outside card */
-.profile {
-  position: absolute;
-  top: -40px;   /* push outside */
-  left: 30px;
-  z-index: 2;
-}
-
-.profile img {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 6px solid #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-/* name bubble next to profile */
-.name-bubble {
-  position: absolute;
-  top: -25px;
-  left: 120px;  /* sits beside image */
-  background: #0677be;
-  padding: 10px 28px;
-  border-radius: 999px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-  color: #fff;
-}
-
-.name {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.role {
-  margin: 0;
-  font-size: 13px;
-  opacity: 0.9;
-}
-
-/* rating top-right */
-.rating {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  color: #ffb400;
-  font-size: 18px;
-}
-
-/* testimonial text */
-.text {
-  margin-top: 50px; /* space below header */
-  color: #4b4b4b;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* dots */
-.slider-dots {
-  margin-top: 22px;
-}
-
-.dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: #d8d4e6;
-  border-radius: 50%;
-  margin: 0 6px;
+.Testimonials .dot {
+  width: 20px;
+  height: 6px;
+  background: #e0dff5;
+  border-radius: 16px;
   cursor: pointer;
-  transition: width .25s ease, background .25s ease;
+  transition: background .25s ease, transform .15s ease;
+  box-shadow: none;
+}
+.Testimonials .dot.active {
+  background: #6c63ff;
+  transform: scale(1.05);
 }
 
-.dot.active {
-  background: #0676be;
+/* ================= Perfect Mobile Overrides for Testimonials =================
+   Paste this at the end of Testimonialss.css (or load after the main CSS).
+   Forces 1 card per row, centers the avatar, places name+role under the avatar,
+   preserves the bubble look, and prevents overflow caused by inline JS widths.
+=============================================================================*/
+@media (max-width: 768px) {
+  .Testimonials {
+    --perView: 1 !important;
+    --card-w: 100% !important;
+    --gap: 16px !important;
+    padding: 40px 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* container / viewport */
+  .Testimonials .slider-wrapper {
+    max-width: 100% !important;
+    padding: 0 8px !important;
+    box-sizing: border-box !important;
+  }
+  .Testimonials .slider-viewport {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    overflow: visible !important; /* allow profile bubble to show */
+  }
+
+  /* make each slide take the full available width */
+  .Testimonials .slider-track {
+    gap: var(--gap) !important;
+    align-items: stretch !important;
+    box-sizing: border-box !important;
+  }
+  .Testimonials .testimonial-slide {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* card becomes full-width and centered, reduce padding */
+  .Testimonials .testimonial-card {
+    width: 100% !important;
+    max-width: 720px !important; /* keeps cards readable on larger phones */
+    padding: 88px 16px 20px !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+    overflow: visible !important;
+    box-shadow: 0 18px 40px rgba(20,18,40,0.03) !important;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+  }
+  .Testimonials .testimonial-slide { margin: 0 0 18px 0 !important; }
+
+  /* header pseudo-decoration hidden on mobile */
+  .Testimonials .card-header::after {
+    display: none !important;
+  }
+
+  /* avatar/profile: center and inside card flow */
+  .Testimonials .card-header {
+    position: relative !important;
+    height: auto !important;
+    padding-top: 0 !important;
+  }
+  .Testimonials .profile {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 92px !important;
+    height: 92px !important;
+    margin: -66px auto 8px !important; /* slight overlap visually */
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    z-index: 5 !important;
+    display: block !important;
+    box-shadow: 0 10px 24px rgba(30,25,80,0.12) !important;
+    background: linear-gradient(135deg,#a52b2b,#0f0d0f) !important;
+    border: 8px solid #226383 !important;
+    box-sizing: border-box !important;
+  }
+  .Testimonials .profile img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 50% !important;
+  }
+
+  /* name bubble below avatar, centered */
+  .Testimonials .name-bubble {
+    position: relative !important;
+    display: inline-block !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 6px auto 0 !important;
+    padding: 8px 20px !important;
+    background: #57a3d2 !important;
+    color: #fff !important;
+    border-radius: 999px !important;
+    box-shadow: 0 12px 28px rgba(108,99,255,0.12) !important;
+    z-index: 4 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  .Testimonials .name {
+    margin: 0 !important;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    color: #fff !important;
+  }
+  .Testimonials .role {
+    margin: 0 !important;
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.95) !important;
+    margin-top: 4px !important;
+    opacity: 1 !important;
+  }
+
+  /* rating under the name bubble */
+  .Testimonials .rating {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    display: block !important;
+    margin: 8px auto 0 !important;
+    color: #ffb400 !important;
+    font-size: 18px !important;
+    letter-spacing: 0 !important;
+    z-index: 3 !important;
+  }
+
+  /* testimonial text: centered and compressed */
+  .Testimonials .text {
+    color: #555 !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-top: 12px !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    padding: 0 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* dots */
+  .Testimonials .slider-dots {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-top: 16px !important;
+  }
+  .Testimonials .dot {
+    width: 14px !important;
+    height: 5px !important;
+    border-radius: 8px !important;
+  }
+  .Testimonials .dot.active {
+    transform: scale(1.05) !important;
+  }
 }
 
-/* ================= Responsive ================= */
-
-/* Tablets and below: show 1 card, add side spacing */
-@media (max-width: 1024px) {
-  .testimonial-slide {
-    flex: 0 0 100%;
-    padding: 0 20px;
-  }
-
-  .testimonial-card {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-
-  .name-bubble {
-    left: 110px;
-    padding: 8px 20px;
-  }
-}
-
-/* Small mobile */
-@media (max-width: 600px) {
-  .profile img {
-    width: 70px;
-    height: 70px;
-  }
-
-  .name-bubble {
-    top: -20px;
-    left: 95px;
-    font-size: 14px;
-    padding: 6px 16px;
-  }
-
-  .rating {
-    font-size: 16px;
-  }
-
-  .text {
-    font-size: 14px;
-  }
+/* extra small screens adjustments */
+@media (max-width: 420px) {
+  .Testimonials .testimonial-card { padding: 72px 12px 16px !important; }
+  .Testimonials .profile { width: 78px !important; height: 78px !important; margin: -56px auto 8px !important; border-width: 6px !important; }
+  .Testimonials .name { font-size: 16px !important; }
+  .Testimonials .role { font-size: 12px !important; }
+  .Testimonials .text { font-size: 14px !important; padding: 0 8px !important; }
 }
 
 /* end Testimonials.js */
@@ -1655,7 +1846,7 @@ body {
 .footer-bottom a {
   background: linear-gradient(45deg, #bb86fc, #a855f7);  
   -webkit-background-clip: text;
-  -webkit-text-fill-color: #a855f7;
+  -webkit-text-fill-color: #00c1fc;
   font-weight: 500;
   text-decoration: none;
   font-size: 14px;
@@ -1664,7 +1855,7 @@ body {
 
 .footer-bottom a:hover {
  text-decoration: underline;
- color: #a855f7;
+ color: #00c3ff;
 }
 
 

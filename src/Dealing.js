@@ -3,14 +3,94 @@ import "./Dealing.css";
 
 export default function Dealing() {
   const services = [
-    { icon: "💻", title: "Product Development" },
-    { icon: "📢", title: "Digital Marketing" },
-    { icon: "🔒", title: "Security System" },
-    { icon: "🖥️", title: "UI/UX Designing" },
-    { icon: "📊", title: "Data Analysis" },
-    { icon: "⚙️", title: "IT Solutions" },
-    { icon: "🌐", title: "Web Development" },
-    { icon: "📱", title: "App Development" },
+    {
+      title: "Product Development",
+      icon: (
+        <img
+          src="/assets/pro.jpg.webp"
+          alt="Product Development"
+          width="48"
+          height="48"
+        />
+      ),
+    },
+    {
+      title: "Digital Marketing",
+      icon: (
+        <img
+          src="/assets/degital-mark.svg"
+          alt="Digital Marketing"
+          width="48"
+          height="48"
+        />
+      ),
+    },
+    {
+      title: "Security System",
+      icon: (
+        <img
+          src="/assets/secyour-sys.svg"
+          alt="Security System"
+          width="48"
+          height="48"
+        />
+      ),
+    },
+    {
+      title: "UI/UX Designing",
+      icon: (
+        <img
+          src="/assets/ui-ux-de.svg"
+          alt="UI/UX Designing"
+          width="48"
+          height="48"
+        />
+      ),
+    },
+    {
+      title: "Data Analysis",
+      icon: (
+        <img
+          src="/assets/data-any.svg"
+          alt="Data Analysis"
+          width="48"
+          height="48"
+        />
+      ),
+    },
+    {
+      title: "IT Solutions",
+      icon: (
+        <img
+          src="/assets/it-sol.svg"
+          alt="IT Solutions"
+          width="48"
+          height="48"
+        />
+      ),
+    },
+    {
+      title: "Web Development",
+      icon: (
+        <img
+          src="/assets/degital-mark.svg"
+          alt="Web Development"
+          width="48"
+          height="48"
+        />
+      ),
+    },
+    {
+      title: "App Development",
+      icon: (
+        <img
+          src="/assets/data-any.svg"
+          alt="App Development"
+          width="48"
+          height="48"
+        />
+      ),
+    },
   ];
 
   const [visibleCards, setVisibleCards] = useState(4);
@@ -19,15 +99,14 @@ export default function Dealing() {
   const leftPad = 20;
   const rightPad = 20;
 
-  // Update visible cards dynamically based on screen width
   useEffect(() => {
     const updateVisibleCards = () => {
       if (window.innerWidth <= 600) {
-        setVisibleCards(1); // Mobile
+        setVisibleCards(1);
       } else if (window.innerWidth <= 900) {
-        setVisibleCards(2); // Tablets
+        setVisibleCards(2);
       } else {
-        setVisibleCards(4); // Desktop
+        setVisibleCards(4);
       }
     };
     updateVisibleCards();
@@ -36,7 +115,8 @@ export default function Dealing() {
   }, []);
 
   const cardFull = cardWidth + gap;
-  const visibleAreaWidth = visibleCards * cardWidth + (visibleCards - 1) * gap;
+  const visibleAreaWidth =
+    visibleCards * cardWidth + (visibleCards - 1) * gap;
   const wrapperWidth = leftPad + visibleAreaWidth + rightPad;
 
   const clonesBefore = services.slice(-visibleCards);
@@ -48,7 +128,6 @@ export default function Dealing() {
   const [transitionOn, setTransitionOn] = useState(true);
   const trackRef = useRef(null);
 
-  // Auto-scroll effect
   useEffect(() => {
     const t = setTimeout(() => {
       setTransitionOn(true);
@@ -57,7 +136,6 @@ export default function Dealing() {
     return () => clearTimeout(t);
   }, [index]);
 
-  // Loop back for infinite effect
   const handleTransitionEnd = () => {
     if (index >= services.length + visibleCards) {
       setTransitionOn(false);
@@ -70,21 +148,24 @@ export default function Dealing() {
 
   return (
     <div className="dealing-section">
-      {/* --------- TOP TEXT --------- */}
       <div className="dealing-top-text">
         <div className="top-left">
           <span className="top-subtitle">— What We're Offering</span>
-          <h2 className="top-title">Dealing in all Professional IT Services</h2>
+          <h2 className="top-title">
+            Dealing in all Professional IT <br></br>
+            Services
+          </h2>
         </div>
         <div className="top-right">
           <p className="top-description">
-            There are many variations of passages available, but majority have suffered alteration
-            in some form, by humour or randomised words which don’t look even slightly believable.
+            There are many variations of passages available, but majority
+            have suffered alteration in some form, by humour or randomised
+            words which don’t look even slightly believable.
           </p>
+          {/* <img src="/assets/pro.jpg.webp" alt="Profile" width="200" /> */}
         </div>
       </div>
 
-      {/* --------- SLIDER --------- */}
       <div
         className="carousel-wrapper"
         style={{
@@ -104,21 +185,39 @@ export default function Dealing() {
             transition: transitionOn ? "transform 0.6s ease-in-out" : "none",
           }}
         >
-          {slides.map((s, i) => (
-            <div className="service-card-de" key={i}>
-              <div className="service-icon-1">{s.icon}</div>
-              <h3 className="service-title-h3">
-                {s.title.split(" ").map((word, idx) =>
-                  idx === 1 ? <><br />{word}</> : word + " "
-                )}
-              </h3>
-              <p className="service-text">
-                Lorem Ipsum has been the <br />
-                industry text ever since <br />
-                then.
-              </p>
-            </div>
-          ))}
+          {slides.map((s, i) => {
+            let key;
+            if (i < visibleCards) {
+              key = `clone-before-${i}-${s.title}`;
+            } else if (i >= services.length + visibleCards) {
+              key = `clone-after-${i}-${s.title}`;
+            } else {
+              key = `original-${i}-${s.title}`;
+            }
+
+            return (
+              <div className="service-card-de" key={key}>
+                <div className="service-icon-1">{s.icon}</div>
+                <h3 className="service-title-h3">
+                  {s.title.split(" ").map((word, idx) =>
+                    idx === 1 ? (
+                      <React.Fragment key={idx}>
+                        <br />
+                        {word}
+                      </React.Fragment>
+                    ) : (
+                      word + " "
+                    )
+                  )}
+                </h3>
+                <p className="service-text">
+                  Lorem Ipsum has been the <br />
+                  industry text ever since <br />
+                  then.
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
