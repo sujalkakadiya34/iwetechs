@@ -1,8 +1,22 @@
- 
+/*  
+
   .dealing-section {
-    background-color: #3900aa;  
-    padding: 80px 20px 40px;
-    color: white;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),  
+    url("../public/assets/bgimg1.jpg") center/cover no-repeat;
+  padding: 80px 20px 40px;
+  color: white;
+  width: 100%;
+  } */
+
+
+  .dealing-section {
+  background: 
+    linear-gradient(rgba(168, 207, 230,0.50), rgba(168, 207, 230,0.90)),  
+    url("../public/assets/bgimg1.jpg") center/cover no-repeat;
+  padding: 80px 20px 40px;
+  color: white;
+  width: 100%;
   }
   
   .dealing-top-text {
@@ -56,12 +70,12 @@
     margin-top: 32px;
   }
   
-  .dealing-section {
+  /* .dealing-section {
     background-color: #0675b659;  
     padding: 80px 20px 40px;
     text-align: center;
     color: white;
-  }
+  } */
   
   .dealing-top-text {
     max-width: 900px;
