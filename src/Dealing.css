@@ -483,6 +483,7 @@
   .ready-img {
     width: 180px;
     height: 180px;
+    margin-left: -25px;
   }
 
   .ready-title {
@@ -511,6 +512,7 @@
   .ready-right {
     max-width: 100%;
     text-align: center;
+    margin-left: -25px;
   }
 
   .ready-title {

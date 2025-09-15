@@ -24,36 +24,36 @@ function Navbar() {
         <nav className="menu">
           {/* Home Dropdown */}
           <div className="dropdown">
-            <a href="" className="dropdown-toggle">Home</a>
+            <a href="http://localhost:3000/" className="dropdown-toggle">Home</a>
             <div className="dropdown-menu">
-              <a href="">Home 1</a>
-              <a href="">Home 2</a>
-              <a href="">Home 3</a>
-              <a href="">Home 4</a>
-              <a href="">Home 5</a>
-              <a href="">Header Versions</a>
+              <a href="http://localhost:3000/">Home 1</a>
+              <a href="http://localhost:3000/">Home 2</a>
+              <a href="http://localhost:3000/">Home 3</a>
+              <a href="http://localhost:3000/">Home 4</a>
+              <a href="http://localhost:3000/">Home 5</a>
+              <a href="http://localhost:3000/">Header Versions</a>
             </div>
           </div>
 
           {/* About */}
-          <a href="">About</a>
+          <a href="http://localhost:3000/">About</a>
 
           {/* Pages Dropdown */}
           <div className="dropdown">
-            <a href="" className="dropdown-toggle">Pages</a>
+            <a href="http://localhost:3000/" className="dropdown-toggle">Pages</a>
             <div className="dropdown-menu">
-              <a href="">Our Team</a>
-              <a href="">Team Details</a>
+              <a href="http://localhost:3000/">Our Team</a>
+              <a href="http://localhost:3000/">Team Details</a>
             </div>
           </div>
 
           {/* Services Dropdown */}
           <div className="dropdown">
-            <a href="" className="dropdown-toggle">Services</a>
+            <a href="http://localhost:3000/" className="dropdown-toggle">Services</a>
             <div className="dropdown-menu">
-              <a href="">Service 1</a>
-              <a href="">Service 2</a>
-              <a href="">Service 3</a>
+              <a href="http://localhost:3000/">Service 1</a>
+              <a href="http://localhost:3000/">Service 2</a>
+              <a href="http://localhost:3000/">Service 3</a>
             </div>
           </div>
 

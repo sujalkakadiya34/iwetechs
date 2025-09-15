@@ -1,7 +1,6 @@
 import React from "react";
 import { FaRegUser, FaRegCommentDots } from "react-icons/fa";
 import "./App.css";
-import "./rspsv.css";
 
 function News() {
   const newsItems = [

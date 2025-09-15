@@ -94,7 +94,8 @@ export default function Dealing() {
   ];
 
   const [visibleCards, setVisibleCards] = useState(4);
-  const [cardWidth, setCardWidth] = useState(230);
+  // const [cardWidth, setCardWidth] = useState(230);
+    const [cardWidth] = useState(230);
   const gap = 20;
   const leftPad = 20;
   const rightPad = 20;
@@ -166,16 +167,17 @@ export default function Dealing() {
         </div>
       </div>
 
-      <div
-        className="carousel-wrapper"
-        style={{
-          width: `${wrapperWidth}px`,
-          paddingLeft: `${leftPad}px`,
-          paddingRight: `${rightPad}px`,
-          ["--card-width"]: `${cardWidth}px`,
-          ["--gap"]: `${gap}px`,
-        }}
-      >
+          <div
+            className="carousel-wrapper"
+            style={{
+              width: `${wrapperWidth}px`,
+              paddingLeft: `${leftPad}px`,
+              paddingRight: `${rightPad}px`,
+              "--card-width": `${cardWidth}px`,
+              "--gap": `${gap}px`,
+            }}
+          >
+
         <div
           ref={trackRef}
           className="carousel-track"

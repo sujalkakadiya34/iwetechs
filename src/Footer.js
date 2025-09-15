@@ -76,7 +76,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© All Copyright 2022 by <a href="https://iwetechs.vercel.app/">Pixydrops</a></p>
+        <p>© All Copyright 2022 by <a href="https://iwetechs.com/">iWeTechs</a></p>
       </div>
     </footer>
   );

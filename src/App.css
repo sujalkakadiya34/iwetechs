@@ -551,12 +551,12 @@ body {
 
 /* Service.js */
 .service-section {
-  background: linear-gradient(to top,#054063 50%, #ffffff 50%);
+  background: linear-gradient(to top,#a8cfe6 50%, #ffffff 50%);
   padding: 60px 20px;
   background-repeat: no-repeat;
   background-size: 120% 149%; 
   text-align: center;
-  margin-bottom: -5px;
+  /* margin-bottom: -5px; */
 }
 
 .service-container {

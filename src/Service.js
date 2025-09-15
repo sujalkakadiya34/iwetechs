@@ -23,7 +23,7 @@ function Service() {
 
   return (
     <div className="service-section">
-      <div className="service-container">
+      <div className="service-conta iner">
         {services.map((service, index) => (
           <div className="service-card" key={index}>
             <div className="image-wrapper">

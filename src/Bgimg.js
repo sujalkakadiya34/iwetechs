@@ -22,17 +22,17 @@ function Bgimg() {
   }, [images.length]);
 
   // Manual next/prev
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  // const nextSlide = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex === images.length - 1 ? 0 : prevIndex + 1
+  //   );
+  // };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex === 0 ? images.length - 1 : prevIndex - 1
+  //   );
+  // };
 
   return (
     <div className="hero-container">
