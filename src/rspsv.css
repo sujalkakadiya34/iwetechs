@@ -201,12 +201,12 @@ html, body {
 @media (max-width: 480px) {
   .service-container {
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
   }
 
   .service-card {
     width: 100%;
-    max-width: 340px;
+    max-width: 300px;
     margin: 0 auto;
   }
 
@@ -344,49 +344,7 @@ html, body {
 /* also end Dealing.js*/
 
 /* ReadySection.js */
-@media (max-width: 992px) {
-  .ready-container {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .ready-btn-wrapper {
-    text-align: center;
-  }
-
-  .ready-title {
-    font-size: 26px;
-  }
-
-  .ready-img {
-    width: 180px;
-    height: 180px;
-  }
-}
-
-@media (max-width: 576px) {
-  .ready-section {
-    min-height: auto;
-    padding: 40px 15px;
-  }
-
-  .ready-title {
-    font-size: 22px;
-  }
-
-  .ready-img {
-    width: 150px;
-    height: 150px;
-  }
-
-  .ready-list li {
-    font-size: 14px;
-  }
-
-  .ready-btn {
-    width: 100%;
-  }
-}
 /* end ReadySection.js */
 
 /* Projects.js */

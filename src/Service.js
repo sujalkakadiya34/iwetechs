@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import "./rspsv.css";
 
 function Service() {
   const services = [
@@ -23,7 +22,7 @@ function Service() {
 
   return (
     <div className="service-section">
-      <div className="service-conta iner">
+      <div className="service-container">
         {services.map((service, index) => (
           <div className="service-card" key={index}>
             <div className="image-wrapper">

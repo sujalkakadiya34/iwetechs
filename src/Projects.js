@@ -8,7 +8,7 @@ function Projects() {
       <div className="projects-container">
         {/* Left Side */}
         <div className="projects-left">
-          <p className="projects-subtitle">— Our Completed Projects</p>
+          <p className="projects-subtitle"><b>— Our Completed Projects</b></p>
           <h1 className="projects-title">
             Improve & Enhance Our <br /> Tech Projects
           </h1>

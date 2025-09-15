@@ -26,7 +26,7 @@ function Expert() {
     <section className="expert-section">
       <div className="expert-container">
         <div className="expert-left">
-          <p className="expert-subtitle">Our Expert People</p>
+          <p className="expert-subtitle">— Our Expert People</p>
           <h2 className="expert-title">
             Meet Our Professional Team Members
           </h2>

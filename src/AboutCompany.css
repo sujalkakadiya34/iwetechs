@@ -6,7 +6,7 @@
   padding: 60px 10%;
   gap: 50px;
   flex-wrap: wrap;
-  overflow-x: hidden; /* Prevent side scrolling */
+  overflow-x: hidden;  
 }
 
 /* ===== Left Side ===== */
