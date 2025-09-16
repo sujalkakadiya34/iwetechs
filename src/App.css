@@ -1,4 +1,50 @@
 /* Container */
+
+/* === Learn More Button Design === */
+.btn-learn-more {
+  padding: 14px 36px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Arrow Styling */
+.btn-learn-more .arrow {
+  transition: transform 0.3s ease;
+  font-size: 20px;
+}
+
+/* Hover Effects */
+.btn-learn-more:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-learn-more:hover .arrow {
+  transform: translateX(6px);
+}
+
+/* Active/Clicked State */
+.btn-learn-more:active {
+  transform: scale(0.96);
+  background: linear-gradient(90deg, #5a0eb6, #1f63e0);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+
 .navbar {
   width: 100%;
   background: #fff;
@@ -561,13 +607,115 @@ body {
 }
 /* end Bgimg.js */
 
+/* === Learn More Page css === */
+.learn-more-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f8f9ff, #eef2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.learn-more-content {
+  max-width: 900px;
+  text-align: center;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.learn-more-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.learn-more-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 40px;
+}
+ 
+.learn-more-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 180px;
+  transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.stat-box h2 {
+  font-size: 30px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.stat-box p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .learn-more-title {
+    font-size: 28px;
+  }
+
+  .learn-more-container{
+    margin-top: 80px;
+  }
+
+  .learn-more-text {
+    font-size: 16px;
+  }
+
+  .stat-box {
+    width: 140px;
+    padding: 15px;
+  }
+}
+
+/* learn more end */
+
 /* Service.js */
 .service-section {
     /* background: linear-gradient(to top,#a8cfe6 50%, #ffffff 50%); */
-  background: linear-gradient(to top,#768ba0 50%, #ffffff 50%);
+  background: linear-gradient(to top,#ffffff 50%, #ffffff 50%);
   padding: 60px 20px;
   background-repeat: no-repeat;
-  background-size: 120% 149%; 
   text-align: center;
   /* margin-bottom: -5px; */
 }
@@ -608,6 +756,7 @@ body {
 .content-box {
   position: relative;
   z-index: 2;
+  margin-top: 10px;
 }
 
  
@@ -631,7 +780,7 @@ body {
  
 .service-title{
   background-color: white;
-  padding: 1px 20px ;
+  padding: 15px 20px ;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: -40px;
