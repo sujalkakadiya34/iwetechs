@@ -25,7 +25,6 @@ import AboutCompanyPage from "./AboutCompanyPage";
 function App() {
   return (
     <BrowserRouter>
-      {/* ✅ Navbar always visible */}
       <Navbar />
 
       <Routes>
