@@ -1,6 +1,5 @@
-/* Container */
+/* Navbar.js */
 
-/* === Learn More Button Design === */
 .btn-learn-more {
   padding: 14px 36px;
   background: linear-gradient(90deg, #6a11cb, #2575fc);
@@ -19,14 +18,12 @@
   overflow: hidden;
   z-index: 5;
 }
-
-/* Arrow Styling */
+ 
 .btn-learn-more .arrow {
   transition: transform 0.3s ease;
   font-size: 20px;
 }
-
-/* Hover Effects */
+ 
 .btn-learn-more:hover {
   background: linear-gradient(90deg, #2575fc, #6a11cb);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
@@ -36,8 +33,7 @@
 .btn-learn-more:hover .arrow {
   transform: translateX(6px);
 }
-
-/* Active/Clicked State */
+ 
 .btn-learn-more:active {
   transform: scale(0.96);
   background: linear-gradient(90deg, #5a0eb6, #1f63e0);
@@ -83,6 +79,7 @@
 
 .navbar-container {
   position: fixed;
+   transition: 5s;
   top: 0;
   left: 0;
   width: 100%;
@@ -357,7 +354,7 @@ body {
     justify-content: center;
     padding: 10px 8px;  
   }
-  /* number box left and right side padding */
+ 
   .right-section .call-box {
     width: calc(100% - 24px);    
     margin: 0 auto;             
@@ -414,7 +411,7 @@ body {
     justify-content: center;
     padding: 12px 10px;
   }
-    /* number box left and right side padding */
+ 
   .right-section .call-box { 
     width: calc(100% - 32px);
     margin: 0 auto;

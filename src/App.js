@@ -19,7 +19,6 @@ import Footer from "./Footer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LearnMore from "./LearnMore";
-import LearnMoreExpert from "./LearnMoreReady";
 import LearnMoreReady from "./LearnMoreReady";
 import AboutCompanyPage from "./AboutCompanyPage";
 

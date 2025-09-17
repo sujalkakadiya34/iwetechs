@@ -6,23 +6,14 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 function Navbar() {
 
-  
   return (
     <header className="navbar-container">
-      {/* Top Bar */}
-
-
-      {/* Main Navbar */}
       <div className="main-navbar">
-        {/* Logo */}
         <div className="logo-section">
-          {/* <h2 className="logo">infetech</h2> */}
           <img src="./assets/iwetechs.png" alt="Logo" />
         </div>
 
-        {/* Menu */}
         <nav className="menu">
-          {/* Home Dropdown */}
           <div className="dropdown">
             <a href="http://localhost:3000/" className="dropdown-toggle">Home</a>
             <div className="dropdown-menu">
@@ -35,10 +26,8 @@ function Navbar() {
             </div>
           </div>
 
-          {/* About */}
           <a href="http://localhost:3000/">About</a>
 
-          {/* Pages Dropdown */}
           <div className="dropdown">
             <a href="http://localhost:3000/" className="dropdown-toggle">Pages</a>
             <div className="dropdown-menu">
@@ -47,7 +36,6 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Services Dropdown */}
           <div className="dropdown">
             <a href="http://localhost:3000/" className="dropdown-toggle">Services</a>
             <div className="dropdown-menu">
@@ -57,7 +45,6 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Projects Dropdown */}
           <div className="dropdown">
             <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Projects</a>
             <div className="dropdown-menu">
@@ -66,7 +53,6 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Blog Dropdown */}
           <div className="dropdown">
             <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Blog</a>
             <div className="dropdown-menu">
@@ -75,10 +61,8 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Contact */}
           <a href="https://iwetechs.vercel.app/">Contact</a>
         </nav>
-        {/* Right Section */}
         <div className="right-section">
    
           <div className="call-box">
