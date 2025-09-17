@@ -49,13 +49,13 @@ function AboutCompany() {
 
         <div className="about-services">
           <div className="about-service">
-            <span className="service-icon">💻</span>
+            <span className="service-icon"><img src="./assets/imgi_8_icon-1.png" /></span>
             <h4 className="about-subtitle-h4">
               Website <br /> Development
             </h4>
           </div>
           <div className="about-service">
-            <span className="service-icon">🖥️</span>
+            <span className="service-icon"><img src="./assets/imgi_9_icon-2 (1).png" /></span> 
             <h4 className="about-subtitle-h4">
               Website <br /> development
             </h4>

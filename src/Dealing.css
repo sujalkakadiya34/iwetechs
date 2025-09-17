@@ -17,7 +17,6 @@
   padding: 80px 3px 40px;
   color: white;
   width: 100%;
-  margin-top: -98px;
   }
   
   .dealing-top-text {
@@ -457,6 +456,7 @@
  
 .ready-btn-wrapper {
   text-align: left;
+  text-decoration: none;
 }
 
 .ready-btn {
@@ -493,6 +493,7 @@
     flex-direction: column;
     text-align: center;
     gap: 30px;
+    margin-left: 25px;
   }
 
   .ready-right {

@@ -1,4 +1,4 @@
-// App.js
+// src/App.js
 import React from "react";
 import "./App.css";
 
@@ -19,14 +19,18 @@ import Footer from "./Footer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LearnMore from "./LearnMore";
-import AboutCompanyPage from "./AboutCompanyPage";  
+import LearnMoreExpert from "./LearnMoreReady";
+import LearnMoreReady from "./LearnMoreReady";
+import AboutCompanyPage from "./AboutCompanyPage";
 
 function App() {
   return (
     <BrowserRouter>
+      {/* ✅ Navbar always visible */}
       <Navbar />
+
       <Routes>
-        {/* Main Homepage */}
+        {/* Homepage */}
         <Route
           path="/"
           element={
@@ -48,12 +52,18 @@ function App() {
           }
         />
 
-        {/* Learn More (Generic Page) */}
+        {/* Generic Learn More page (if used) */}
         <Route path="/learn-more" element={<LearnMore />} />
 
-        {/* About Company Detailed Page */}
+        {/* Ready Section Learn More page */}
+        <Route path="/learn-ready" element={<LearnMoreReady />} />
+
+        {/* About Company detailed page */}
         <Route path="/about-company" element={<AboutCompanyPage />} />
       </Routes>
+
+      {/* ✅ Footer always visible */}
+      
     </BrowserRouter>
   );
 }

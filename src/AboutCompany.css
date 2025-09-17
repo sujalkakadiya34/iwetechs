@@ -315,7 +315,7 @@ body {
 /* =========================================
    Splash Screen
 =========================================== */
-.splash-screen {
+.splash-screen-lm {
   position: fixed;
   top: 0;
   left: 0;
@@ -328,7 +328,7 @@ body {
   z-index: 9999;
 }
 
-.splash-bg {
+.splash-bg-lm {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -347,7 +347,7 @@ body {
   }
 }
 
-.splash-overlay {
+.splash-overlay-lm {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -359,7 +359,7 @@ body {
 }
 
 /* Floating particles */
-.particles {
+.particles-lm {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -367,7 +367,7 @@ body {
   overflow: hidden;
 }
 
-.particles span {
+.particles-lm span {
   position: absolute;
   bottom: -10px;
   width: 8px;
@@ -378,14 +378,14 @@ body {
   opacity: 0.6;
 }
 
-.particles span:nth-child(odd) {
+.particles-lm span:nth-child(odd) {
   background: var(--light-blue);
 }
-.particles span:nth-child(even) {
+.particles-lm span:nth-child(even) {
   background: var(--primary-blue);
 }
 
-.particles span {
+.particles-lm span {
   left: calc(var(--i) * 10%);
   animation-delay: calc(var(--i) * 0.3s);
 }
@@ -405,13 +405,13 @@ body {
 }
 
 /* Splash logo & text */
-.splash-logo-container {
+.splash-logo-container-lm {
   position: relative;
   text-align: center;
   z-index: 3;
 }
 
-.splash-logo {
+.splash-logo-lm {
   width: 120px;
   height: auto;
   margin-bottom: 20px;
@@ -432,7 +432,7 @@ body {
   }
 }
 
-.splash-text {
+.splash-text-lm {
   font-size: 34px;
   font-weight: bold;
   color: #fff;
@@ -458,7 +458,7 @@ body {
 /* =========================================
    Main Content Wrapper
 =========================================== */
-.about-page {
+.about-page-lm {
   position: relative;
   padding-top: 80px;
 }
@@ -466,7 +466,7 @@ body {
 /* =========================================
    Hero Section
 =========================================== */
-.about-hero {
+.about-hero-lm {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -476,46 +476,46 @@ body {
   background: linear-gradient(to right, #f4faff, #eaf6ff);
 }
 
-.hero-text {
+.hero-text-lm {
   flex: 1;
   max-width: 500px;
 }
 
-.hero-text h1 {
+.hero-text-lm h1 {
   color: var(--light-blue);
   font-size: 20px;
   margin-bottom: 15px;
   text-transform: uppercase;
 }
 
-.hero-text h2 {
+.hero-text-lm h2 {
   font-size: 42px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.hero-text h2 span {
+.hero-text-lm h2 span {
   color: var(--primary-blue);
 }
 
-.hero-text p {
+.hero-text-lm p {
   font-size: 18px;
   line-height: 1.7;
   color: var(--text-gray);
 }
 
-.hero-image {
+.hero-image-lm {
   flex: 1;
   text-align: center;
   position: relative;
 }
 
-.image-frame {
+.image-frame-lm {
   position: relative;
   display: inline-block;
 }
 
-.image-frame img {
+.image-frame-lm img {
   width: 100%;
   max-width: 450px;
   border-radius: 15px;
@@ -524,7 +524,7 @@ body {
   z-index: 2;
 }
 
-.image-overlay {
+.image-overlay-lm {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -539,7 +539,7 @@ body {
 /* =========================================
    Mission Section
 =========================================== */
-.mission-section {
+.mission-section-lm {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -548,25 +548,25 @@ body {
   flex-wrap: wrap;
 }
 
-.mission-image img {
+.mission-image-lm img {
   max-width: 400px;
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0, 122, 204, 0.2);
 }
 
-.mission-content {
+.mission-content-lm {
   flex: 1;
   max-width: 500px;
 }
 
-.mission-content h3 {
+.mission-content-lm h3 {
   font-size: 30px;
   color: var(--primary-blue);
   margin-bottom: 20px;
 }
 
-.mission-content p {
+.mission-content-lm p {
   font-size: 18px;
   color: var(--text-gray);
   line-height: 1.8;
@@ -747,19 +747,19 @@ body {
    Responsive Design
 =========================================== */
 @media (max-width: 992px) {
-  .about-hero,
-  .mission-section {
+  .about-hero-lm,
+  .mission-section-lm {
     flex-direction: column;
     text-align: center;
     padding: 60px 5%;
   }
 
-  .hero-text h2 {
+  .hero-text-lm h2 {
     font-size: 34px;
   }
 
-  .hero-image img,
-  .mission-image img {
+  .hero-image-lm img,
+  .mission-image-lm img {
     max-width: 90%;
   }
 
@@ -769,15 +769,15 @@ body {
 }
 
 @media (max-width: 576px) {
-  .splash-logo {
+  .splash-logo-lm {
     width: 80px;
   }
 
-  .splash-text {
+  .splash-text-lm {
     font-size: 24px;
   }
 
-  .hero-text h2 {
+  .hero-text-lm h2 {
     font-size: 26px;
   }
 

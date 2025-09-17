@@ -29,7 +29,7 @@ function Service() {
               <img src={service.img} alt={`service-${index}`} />
             </div>
             
-            <div className="content-box">
+            <div className="content-box-pl">
               <div className="icon-box">
                 <img src={service.icon} alt="icon" />
               </div>

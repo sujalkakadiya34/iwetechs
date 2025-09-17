@@ -1,7 +1,8 @@
+// src/ReadySection.js
 import React from "react";
 import "./Dealing.css";
-// import "./rspsv.css"
 import { FaCheckCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";  // ✅ import Link
 
 const ReadySection = () => {
   return (
@@ -10,7 +11,7 @@ const ReadySection = () => {
         {/* Left Circle Image */}
         <div className="ready-left">
           <img
-            src = "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
+            src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
             alt="Team Work"
             className="ready-img"
           />
@@ -36,7 +37,10 @@ const ReadySection = () => {
           </ul>
 
           <div className="ready-btn-wrapper">
-            <button className="ready-btn">LEARN MORE</button>
+            {/* ✅ Link instead of button */}
+            <Link to="/learn-ready" className="ready-btn">
+              LEARN MORE
+            </Link>
           </div>
         </div>
       </div>

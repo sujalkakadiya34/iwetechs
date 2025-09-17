@@ -384,11 +384,18 @@ html, body {
     gap: 25px;
   }
 
-  .projects-left, .projects-right {
+  .projects-left {
     flex: 1 1 100%;
     margin: 0;
     text-align: center;
-    margin-left: 60px;
+    margin-left: 50px;
+}
+
+.projects-right {
+    flex: 1 1 100%;
+    margin: 0;
+    text-align: center;
+    margin-left: 80px;
 }
 
   .projects-title {
@@ -515,6 +522,7 @@ html, body {
   }
   .team-card {
     max-width: 260px;
+    margin-left: 27px;
   }
   .team-img img {
     height: 320px;
@@ -529,6 +537,7 @@ html, body {
     flex-direction: column;
     text-align: center;
     gap: 25px;
+    margin-left: 27px
   }
   .expert-left, .expert-right {
     margin-left: 0;
@@ -761,30 +770,71 @@ html, body {
 /* end News.js */
 
 /* CtaSection.js */
-@media (max-width: 768px) {
-  .cta-text h2 {
+
+@media (min-width: 1200px) {
+  .ctaSectionBox {
+    padding: 60px 100px;
+  }
+  .ctaContent h2 {
+    font-size: 32px;
+  }
+}
+ 
+@media (max-width: 1199px) {
+  .ctaInner {
+    margin: 30px;
+  }
+  .ctaContent h2 {
+    font-size: 26px;
+  }
+  .ctaContent p {
+    font-size: 15px;
+  }
+}
+ 
+@media (max-width: 991px) {
+  .ctaInner {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    margin: 20px;
+  }
+  .ctaContent h2 {
+    font-size: 24px;
+  }
+  .ctaLearnBtn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+ 
+@media (max-width: 767px) {
+  .ctaSectionBox {
+    padding: 40px 20px;
+  }
+  .ctaContent h2 {
     font-size: 22px;
   }
-  .cta-text p {
+  .ctaContent p {
     font-size: 14px;
+  }
+}
+ 
+@media (max-width: 575px) {
+  .ctaInner {
+    margin: 10px;
+    gap: 16px;
+  }
+  .ctaContent h2 {
+    font-size: 20px;
+  }
+  .ctaLearnBtn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 12px;
   }
 }
 
-@media (max-width: 480px) {
-  .cta-section {
-    padding: 40px 15px;
-    justify-content: center;
-  }
-  .cta-text h2 {
-    font-size: 20px;
-    justify-content: center;
-  }
-  .cta-button .btn-learn {
-    padding: 10px 24px;
-    font-size: 14px;
-    margin-top: 20px;
-  }
-}
 /* end CtaSection.js */
 
 /* Footer.js */

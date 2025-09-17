@@ -4,17 +4,17 @@ import "./rspsv.css";
 
 function CtaSection() {
   return (
-    <section className="cta-section">
-      <div className="cta-container">
+    <section className="ctaSectionBox">
+      <div className="ctaInner">
         {/* Left Content */}
-        <div className="cta-text">
+        <div className="ctaContent">
           <p>We’re here to help to grow your business.</p>
           <h2>Looking for the Best IT Business Solutions?</h2>
         </div>
 
         {/* Right Button */}
-        <div className="cta-button">
-          <a href="#learn" className="btn-learn">
+        <div className="ctaBtnWrap">
+          <a href="#learn" className="ctaLearnBtn">
             LEARN MORE
           </a>
         </div>
@@ -24,3 +24,4 @@ function CtaSection() {
 }
 
 export default CtaSection;
+

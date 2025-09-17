@@ -29,7 +29,7 @@ function Solutionimage() {
               <p className="solutionimage-subtitle">
                 <b>Do You Need a Meeting?</b>
               </p>
-              <h1 className="solutionimage-title">
+              <h1 className="solutionimage-title-si">
                 Save Time and Money <br />
                 with a Top IT Solution <br />
                 Agency
@@ -38,16 +38,16 @@ function Solutionimage() {
 
             {/* Right Section */}
             <div className="solutionimage-right">
-              <div className="solutionimage-box box-light">
-                <div className="solutionimage-box-padding">
+              <div className="solutionimage-box box-light-si">
+                <div className="solutionimage-box-padding-si">
                   <h2>9280</h2>
                   <p className="solutionimage-box-p">
                     We have satisfied <br /> customers
                   </p>
                 </div>
               </div>
-              <div className="solutionimage-box box-dark">
-                <div className="solutionimage-box-padding">
+              <div className="solutionimage-box box-dark-si">
+                <div className="solutionimage-box-padding-si">
                   <h2>6420</h2>
                   <p>
                     Projects has been <br /> completed
