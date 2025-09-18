@@ -1,13 +1,46 @@
-import React from "react";
+// Navbar.js
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
-// import "./rspsv.css";   
-// import { FaTwitter, FaFacebookF, FaPinterestP, FaInstagram, FaSearch, FaShoppingCart, FaPhoneAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 
 function Navbar() {
+  const [visible, setVisible] = useState(true);  
+  const [animating, setAnimating] = useState(false);  
+  const timerRef = useRef(null);
+  const triggeredRef = useRef(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (!triggeredRef.current && window.scrollY > 0) {
+        triggeredRef.current = true;
+        setVisible(false);  
+        timerRef.current = setTimeout(() => {
+          setVisible(true);  
+          setAnimating(true);  
+          timerRef.current = null;
+        }, 300);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   return (
-    <header className="navbar-container">
+    <header
+      className="navbar-container"
+      style={{
+        transform: visible ? "translateY(0)" : "translateY(-120%)",
+        opacity: visible ? 1 : 0,
+        transition: animating
+          ? "transform 0.6s ease, opacity 0.4s ease"
+          : "none",
+      }}
+    >
       <div className="main-navbar">
         <div className="logo-section">
           <img src="./assets/iwetechs.png" alt="Logo" />
@@ -15,56 +48,56 @@ function Navbar() {
 
         <nav className="menu">
           <div className="dropdown">
-            <a href="http://localhost:3000/" className="dropdown-toggle">Home</a>
+            <a href="#sanmlknm" className="dropdown-toggle">Home</a>
             <div className="dropdown-menu">
-              <a href="http://localhost:3000/">Home 1</a>
-              <a href="http://localhost:3000/">Home 2</a>
-              <a href="http://localhost:3000/">Home 3</a>
-              <a href="http://localhost:3000/">Home 4</a>
-              <a href="http://localhost:3000/">Home 5</a>
-              <a href="http://localhost:3000/">Header Versions</a>
+              <a href="#fhsdi">Home 1</a>
+              <a href="#fhsdi">Home 2</a>
+              <a href="#fhsdi">Home 3</a>
+              <a href="#fhsdi">Home 4</a>
+              <a href="#fhsdi">Home 5</a>
+              <a href="#fhsdi">Header Versions</a>
             </div>
           </div>
 
-          <a href="http://localhost:3000/">About</a>
+          <a href="#sknckn">About</a>
 
           <div className="dropdown">
-            <a href="http://localhost:3000/" className="dropdown-toggle">Pages</a>
+            <a href="#sdkmvldkv" className="dropdown-toggle">Pages</a>
             <div className="dropdown-menu">
-              <a href="http://localhost:3000/">Our Team</a>
-              <a href="http://localhost:3000/">Team Details</a>
-            </div>
-          </div>
-
-          <div className="dropdown">
-            <a href="http://localhost:3000/" className="dropdown-toggle">Services</a>
-            <div className="dropdown-menu">
-              <a href="http://localhost:3000/">Service 1</a>
-              <a href="http://localhost:3000/">Service 2</a>
-              <a href="http://localhost:3000/">Service 3</a>
+              <a href="#">Our Team</a>
+              <a href="#">Team Details</a>
             </div>
           </div>
 
           <div className="dropdown">
-            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Projects</a>
+            <a href="#" className="dropdown-toggle">Services</a>
             <div className="dropdown-menu">
-              <a href="https://iwetechs.vercel.app/">Projects</a>
-              <a href="https://iwetechs.vercel.app/">Project Details</a>
+              <a href="#">Service 1</a>
+              <a href="#">Service 2</a>
+              <a href="#">Service 3</a>
             </div>
           </div>
 
           <div className="dropdown">
-            <a href="https://iwetechs.vercel.app/" className="dropdown-toggle">Blog</a>
+            <a href="#" className="dropdown-toggle">Projects</a>
             <div className="dropdown-menu">
-              <a href="https://iwetechs.vercel.app/">Blog</a>
-              <a href="https://iwetechs.vercel.app/">Blog Details</a>
+              <a href="#">Projects</a>
+              <a href="#">Project Details</a>
             </div>
           </div>
 
-          <a href="https://iwetechs.vercel.app/">Contact</a>
+          <div className="dropdown">
+            <a href="#" className="dropdown-toggle">Blog</a>
+            <div className="dropdown-menu">
+              <a href="#">Blog</a>
+              <a href="#">Blog Details</a>
+            </div>
+          </div>
+
+          <a href="#">Contact</a>
         </nav>
+
         <div className="right-section">
-   
           <div className="call-box">
             <FaPhoneAlt className="call-icon" />
             <div>

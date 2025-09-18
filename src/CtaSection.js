@@ -1,8 +1,16 @@
+// src/CtaSection.js
 import React from "react";
 import "./App.css";
 import "./rspsv.css";
+import { useNavigate } from "react-router-dom";
 
 function CtaSection() {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate("/cta-learn"); // ✅ navigates to ctalmbtn.js
+  };
+
   return (
     <section className="ctaSectionBox">
       <div className="ctaInner">
@@ -14,9 +22,9 @@ function CtaSection() {
 
         {/* Right Button */}
         <div className="ctaBtnWrap">
-          <a href="#learn" className="ctaLearnBtn">
+          <button onClick={handleLearnMore} className="ctaLearnBtn">
             LEARN MORE
-          </a>
+          </button>
         </div>
       </div>
     </section>
@@ -24,4 +32,5 @@ function CtaSection() {
 }
 
 export default CtaSection;
+
 

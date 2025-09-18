@@ -21,6 +21,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LearnMore from "./LearnMore";
 import LearnMoreReady from "./LearnMoreReady";
 import AboutCompanyPage from "./AboutCompanyPage";
+import CtaLmBtn from "./ctalmbtn";  // ✅ new file
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
           }
         />
 
-        {/* Generic Learn More page (if used) */}
+        {/* Generic Learn More page */}
         <Route path="/learn-more" element={<LearnMore />} />
 
         {/* Ready Section Learn More page */}
@@ -58,10 +59,10 @@ function App() {
 
         {/* About Company detailed page */}
         <Route path="/about-company" element={<AboutCompanyPage />} />
-      </Routes>
 
-      {/* ✅ Footer always visible */}
-      
+        {/* ✅ CTA Learn More Button Route */}
+        <Route path="/cta-learn" element={<CtaLmBtn />} />
+      </Routes>
     </BrowserRouter>
   );
 }

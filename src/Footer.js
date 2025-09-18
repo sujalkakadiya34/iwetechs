@@ -61,7 +61,7 @@ function Footer() {
 
               <div className="contact-item">
                 <MdEmail className="icon" />
-                <span>sujalkakadiya1296@gmail.com</span>
+                <span>iwetechs1017@gmail.com</span>
               </div>
 
               <div className="contact-item">

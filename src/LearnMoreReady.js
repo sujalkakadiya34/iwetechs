@@ -17,7 +17,7 @@ function LearnMoreReady() {
       <section className="lm-ready-content">
         <div className="content-box-lm">
           <h2>Why Choose Us?</h2>
-          <p>
+          <p className="content-box-lm-p">
             We provide high-quality IT solutions tailored to your business needs.
             From cloud integration to app development, our team is always ready.
           </p>
