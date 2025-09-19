@@ -1816,6 +1816,7 @@ body {
 .ctaLearnBtn {
   background: #fff;
   color: #111;
+  border: none;
   padding: 14px 28px;
   font-size: 14px;
   font-weight: bold;

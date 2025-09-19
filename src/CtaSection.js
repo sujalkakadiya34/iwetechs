@@ -1,4 +1,3 @@
-// src/CtaSection.js
 import React from "react";
 import "./App.css";
 import "./rspsv.css";
@@ -8,7 +7,7 @@ function CtaSection() {
   const navigate = useNavigate();
 
   const handleLearnMore = () => {
-    navigate("/cta-learn"); // ✅ navigates to ctalmbtn.js
+    navigate("/cta-learn"); 
   };
 
   return (
