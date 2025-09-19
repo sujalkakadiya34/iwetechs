@@ -738,17 +738,27 @@ html, body {
 
 @media (max-width: 600px) {
   .solutionimage-title-si {
-    font-size: 28px;
+    font-size: 20px;
+    margin-left: 70px;
+  }
+
+  .solutionimage-subtitle{
+    margin-left: 60px;
   }
 
   .solutionimage-play{
-    margin-left: 115px;
+    margin-left: 180px;
   }
 
   .solutionimage-box {
-    padding: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  .solutionimage-right {
+    margin-left: -100px;
   }
 }
+
 /* end Solutionimage.js */
 
 /* News.js */

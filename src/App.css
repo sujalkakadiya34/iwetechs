@@ -1579,7 +1579,7 @@ body {
 .solutionimage-left {
   flex: 1;
   max-width: 600px;
-  margin-left: 20px;
+  margin-left: -70px;
 }
 
 .solutionimage-play {
@@ -1610,7 +1610,6 @@ body {
 }
 
 .solutionimage-title-si {
-  font-size: 80px;
   margin-top: -8px;
   font-weight: 800;
   line-height: 1.3;
@@ -1621,6 +1620,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-right: -100px;
   padding: 20px;
 }
 
