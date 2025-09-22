@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.c05f2328.css",
+    "main.css": "/static/css/main.5014d905.css",
     "main.js": "/static/js/main.f4af94d3.js",
     "static/js/453.c3f3e2e8.chunk.js": "/static/js/453.c3f3e2e8.chunk.js",
     "static/media/bgimg1.jpg": "/static/media/bgimg1.562151e7649b9de69c01.jpg",
     "static/media/iwetechs.png": "/static/media/iwetechs.0e135043526d06db557b.png",
     "index.html": "/index.html",
-    "main.c05f2328.css.map": "/static/css/main.c05f2328.css.map",
+    "main.5014d905.css.map": "/static/css/main.5014d905.css.map",
     "main.f4af94d3.js.map": "/static/js/main.f4af94d3.js.map",
     "453.c3f3e2e8.chunk.js.map": "/static/js/453.c3f3e2e8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c05f2328.css",
+    "static/css/main.5014d905.css",
     "static/js/main.f4af94d3.js"
   ]
 }
