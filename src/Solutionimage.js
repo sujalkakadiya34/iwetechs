@@ -29,7 +29,7 @@ function Solutionimage() {
               <p className="solutionimage-subtitle">
                 <b>Do You Need a Meeting?</b>
               </p>
-              <h1 className="solutionimage-title-si" style={{ fontSize: 45 }}>
+              <h1 className="solutionimage-title-si">
                 Save Time and Money <br />
                 with a Top IT Solution <br />
                 Agency

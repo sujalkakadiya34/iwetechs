@@ -54,7 +54,7 @@ function News() {
                 </span>
                 </div> 
               <h3 className="news-title">{news.title}</h3>
-              <a href="https://iwetechs.vercel.app/" className="read-more">
+              <a href="#" className="read-more">
                 READ MORE
               </a>
             </div>

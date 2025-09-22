@@ -738,7 +738,7 @@ html, body {
 
 @media (max-width: 600px) {
   .solutionimage-title-si {
-    font-size: 20px;
+    font-size: 27px;
     margin-left: 70px;
   }
 
@@ -747,13 +747,14 @@ html, body {
   }
 
   .solutionimage-play{
-    margin-left: 180px;
+    margin-left: 175px;
   }
 
   .solutionimage-box {
     padding: 15px;
     margin-bottom: 10px;
   }
+  
   .solutionimage-right {
     margin-left: -100px;
   }
