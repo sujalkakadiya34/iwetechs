@@ -199,6 +199,11 @@
 
 /* ===== Mobile Phones (≤600px) ===== */
 @media (max-width: 600px) {
+
+  .dealing-section{
+    margin-top: -101.5px;
+  }
+
   .dealing-top-text {
     display: flex;
     flex-direction: column;
@@ -229,7 +234,7 @@
   .top-description {
     font-size: 14px;
     line-height: 1.6;
-    max-width: 90%;
+    max-width: 92%;
     margin: 0 auto;
     text-align: center;
   }
