@@ -738,7 +738,7 @@ html, body {
 
 @media (max-width: 600px) {
   .solutionimage-title-si {
-    font-size: 27px;
+    font-size: 35px;
     margin-left: 70px;
   }
 
@@ -747,7 +747,8 @@ html, body {
   }
 
   .solutionimage-play{
-    margin-left: 172px;
+    margin-top: 18px;
+    margin-left: 191px;
   }
 
   .solutionimage-box {
