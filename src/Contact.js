@@ -18,15 +18,27 @@ export default function Contact({ showAlertInNavbar }) {
     setFormData({ ...formData, [name]: value });
   };
 
+  // Smooth scroll to navbar alert
+  const scrollToAlert = () => {
+    const alertElement = document.querySelector(".navbar-alert");
+    if (alertElement) {
+      alertElement.classList.add("show");
+      alertElement.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => alertElement.classList.remove("show"), 4000); // hide after 4s
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
       showAlertInNavbar("⚠️ Please fill in Name, Email, and Message!");
+      scrollToAlert();
       return;
     }
 
-    showAlertInNavbar(`Thank You! ${formData.name}, Data Has Successfully Send!`);
+    showAlertInNavbar(`✅ Thank You! ${formData.name}, Data Has Successfully Sent!`);
+    scrollToAlert();
 
     setFormData({
       name: "",
@@ -48,7 +60,7 @@ export default function Contact({ showAlertInNavbar }) {
             <span className="cf-icon"><FaPhoneAlt /></span>
             <div>
               <h4 className="cf-info-title">Call Anytime</h4>
-              <p className="cf-info-text">+ 88 ( 9800 ) 6802</p>
+              <p className="cf-info-text">+ 88 (9800) 6802</p>
             </div>
           </div>
 
@@ -65,13 +77,12 @@ export default function Contact({ showAlertInNavbar }) {
             <div>
               <h4 className="cf-info-title">Visit Now</h4>
               <p className="cf-info-text">
-                1017, RK Supreme, Near nana mava
-                circle, 150 feet ring road, Rajkot,
-                Gujarat - 360005
+                1017, RK Supreme, Near Nana Mava Circle, 150 Feet Ring Road, Rajkot, Gujarat - 360005
               </p>
             </div>
           </div>
-                    {/* Back to Home Button */}
+
+          {/* Back to Home Button */}
           <div style={{ marginTop: "41px", textAlign: "center" }}>
             <Link to="/" className="cf-button-b-t-h" style={{ textDecoration: "none" }}>
               Back to Home
@@ -132,8 +143,6 @@ export default function Contact({ showAlertInNavbar }) {
               SEND A MESSAGE
             </button>
           </form>
-
-
         </div>
       </div>
       <Footer />

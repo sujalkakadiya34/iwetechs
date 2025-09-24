@@ -215,7 +215,7 @@
 .cf-button-b-t-h:hover {
   background-color: #0998c4a4;
 }
-
+/* 
 .navbar-alert {
   background: #f0f0f0;
   color: green;
@@ -224,8 +224,10 @@
   margin: 0;
   font-weight: bold;
   border-bottom: 2px solid #ccc;
-}
- 
+} */
+ /* ===========================
+   Tablets (iPad, small tablets)
+=========================== */
 @media (max-width: 1024px) {
   .cf-container {
     padding: 50px 8%;
@@ -248,8 +250,19 @@
     padding: 14px 45px;
     font-size: 0.95rem;
   }
+
+  .cf-left {
+    max-width: 350px;
+  }
+
+  .cf-right {
+    padding: 30px;
+  }
 }
- 
+
+/* ===========================
+   Small Tablets & Large Mobile
+=========================== */
 @media (max-width: 768px) {
   .cf-container {
     flex-direction: column;
@@ -277,9 +290,27 @@
     width: 100%;
     padding: 12px 35px;
     font-size: 0.9rem;
+    margin-left: 0;
+  }
+
+  .cf-right {
+    padding: 25px;
+  }
+
+  .cf-input, .cf-textarea {
+    font-size: 0.9rem;
+    padding: 12px 14px;
+  }
+
+  .cf-button {
+    padding: 16px;
+    font-size: 0.95rem;
   }
 }
- 
+
+/* ===========================
+   Small Mobile Devices
+=========================== */
 @media (max-width: 480px) {
   .contact-overlay {
     padding: 20px 20px;
@@ -296,10 +327,27 @@
   .cf-button-b-t-h {
     padding: 10px 25px;
     font-size: 0.85rem;
-    margin-left: -25px;
+    margin-left: 0;
+  }
+
+  .cf-right {
+    padding: 20px;
+  }
+
+  .cf-input, .cf-textarea {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .cf-button {
+    padding: 14px;
+    font-size: 0.9rem;
   }
 }
- 
+
+/* ===========================
+   Extra Large Screens (4K / XXL monitors)
+=========================== */
 @media (min-width: 1600px) {
   .cf-container {
     padding: 80px 15%;
@@ -320,6 +368,102 @@
   .cf-button-b-t-h {
     padding: 18px 60px;
     font-size: 1.1rem;
+  }
+}
+
+/* ===========================
+   Navbar Alert Smooth Scroll
+=========================== */
+/* ===========================
+   Navbar Alert - Responsive Design
+=========================== */
+.navbar-alert {
+  position: fixed;          /* stays at the top */
+  top: 120px;                /* adjust according to navbar height */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  min-width: 100%;         /* minimum width for small devices */
+  max-width: 90%;           /* responsive for larger screens */
+  background: #f0f0f0;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border-bottom: 2px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.4s ease, top 0.4s ease;
+  pointer-events: none;      /* prevents clicking while hidden */
+}
+
+/* Show the alert */
+.navbar-alert.show {
+  opacity: 1;
+  top: 70px;                 /* slight drop animation */
+  pointer-events: auto;       /* allow interaction */
+}
+
+/* ===========================
+   Responsive Font & Padding
+=========================== */
+@media (max-width: 1024px) {
+  .navbar-alert {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-alert {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+    min-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-alert {
+    font-size: 0.85rem;
+    min-width: 100%;         
+    margin-top: 130px;             
+    margin-bottom: 100px; 
+    padding: 38px 12px;        
+    background: #f0f0f0;      
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+ 
+  @keyframes bounceIn {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(5px);
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(-3px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .navbar-alert {
+    font-size: 1.1rem;
+    padding: 14px 24px;
+    min-width: 350px;
   }
 }
 
