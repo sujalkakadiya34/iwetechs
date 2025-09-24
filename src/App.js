@@ -1,8 +1,11 @@
-// src/App.js
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./Navbar";
+import Contact from "./Contact";
+
+// Other pages/components (placeholders)
 import Bgimg from "./Bgimg";
 import AboutCompany from "./AboutCompany";
 import Service from "./Service";
@@ -16,17 +19,21 @@ import Solutionimage from "./Solutionimage";
 import News from "./News";
 import CtaSection from "./CtaSection";
 import Footer from "./Footer";
-
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LearnMore from "./LearnMore";
 import LearnMoreReady from "./LearnMoreReady";
 import AboutCompanyPage from "./AboutCompanyPage";
-import CtaLmBtn from "./ctalmbtn";  
+import CtaLmBtn from "./ctalmbtn";
 
 function App() {
+  const [alertTrigger, setAlertTrigger] = useState(null);
+
+  const showAlertInNavbar = (message) => {
+    setAlertTrigger({ message });
+  };
+
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar alertTrigger={alertTrigger} />
 
       <Routes>
         <Route
@@ -49,14 +56,14 @@ function App() {
             </>
           }
         />
- 
         <Route path="/learn-more" element={<LearnMore />} />
- 
         <Route path="/learn-ready" element={<LearnMoreReady />} />
- 
         <Route path="/about-company" element={<AboutCompanyPage />} />
- 
         <Route path="/cta-learn" element={<CtaLmBtn />} />
+        <Route
+          path="/contact"
+          element={<Contact showAlertInNavbar={showAlertInNavbar} />}
+        />
       </Routes>
     </BrowserRouter>
   );

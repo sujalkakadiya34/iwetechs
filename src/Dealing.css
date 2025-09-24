@@ -193,15 +193,13 @@
 .service-card-de:hover .service-text {
   color: gray;
 }
-/* ============================================
-   RESPONSIVE TEXT ONLY
-   ============================================ */
 
+/* =========== RESPONSIVE TEXT ONLY ======= */
 /* ===== Mobile Phones (≤600px) ===== */
 @media (max-width: 600px) {
 
   .dealing-section{
-    margin-top: -101.5px;
+    margin-top: -97.5px;
   }
 
   .dealing-top-text {
