@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./css.css";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Footer from "./Footer";
+import BannerSection from "./BannerSection";  
+
 
 export default function Contact({ showAlertInNavbar }) {
   const [formData, setFormData] = useState({
@@ -37,7 +39,7 @@ export default function Contact({ showAlertInNavbar }) {
       return;
     }
 
-    showAlertInNavbar(`✅ Thank You! ${formData.name}, Data Has Successfully Sent!`);
+    showAlertInNavbar(`✔ Thank You! ${formData.name}, Data Has Successfully Sent!`);
     scrollToAlert();
 
     setFormData({
@@ -83,7 +85,7 @@ export default function Contact({ showAlertInNavbar }) {
           </div>
 
           {/* Back to Home Button */}
-          <div style={{ marginTop: "41px", textAlign: "center" }}>
+          <div style={{ marginTop: "39px", textAlign: "center" }}>
             <Link to="/" className="cf-button-b-t-h" style={{ textDecoration: "none" }}>
               Back to Home
             </Link>
@@ -145,7 +147,8 @@ export default function Contact({ showAlertInNavbar }) {
           </form>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
+      <BannerSection />
     </>
   );
 }
