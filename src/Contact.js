@@ -147,8 +147,8 @@ export default function Contact({ showAlertInNavbar }) {
           </form>
         </div>
       </div>
-      {/* <Footer /> */}
       <BannerSection />
+      <Footer />
     </>
   );
 }
