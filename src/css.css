@@ -84,10 +84,10 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  background: #f7f5fb;
+  background: transparent;
   padding: 60px 8%;
   gap: 40px;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 /* LEFT SIDE */
@@ -386,7 +386,7 @@
   min-width: 100%;         /* minimum width for small devices */
   max-width: 90%;           /* responsive for larger screens */
   background: white;
-  color: rgb(0, 0, 0);
+  color: rgb(0, 255, 42);
   font-weight: bold;
   text-align: center;
   padding: 12px 20px;
@@ -467,4 +467,77 @@
   }
 }
 
+/* start AuroShowcase.js */ 
+.auro-frame {
+  position: relative;
+  width: 100%;
+  height: 500px;  
+  background: url("../build/assets/img.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.auro-layer {
+  position: absolute;
+  inset: 0; 
+  background: linear-gradient(
+    rgba(32, 172, 227, 0.3),
+    rgba(32, 172, 227, 0.5)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(10px, 2vw, 20px); 
+  margin-top: clamp(50px, 10vw, 80px);  
+  box-sizing: border-box;
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.auro-title {
+  color: #ffffff;
+  font-size: clamp(24px, 5vw, 37px);  
+  font-weight: 900;
+  letter-spacing: clamp(1.5px, 0.5vw, 3px);  
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.auro-crumbs {
+  color: #e5dbff;
+  font-size: clamp(12px, 1.5vw, 15px); 
+  font-weight: 500;
+  letter-spacing: clamp(1px, 0.3vw, 1.5px);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.auro-crumbs span {
+  margin: 0 clamp(1px, 0.5vw, 2px);
+  color: #ff5fd2;
+}
+
+@media (max-width: 1024px) {
+  .auro-frame {
+    height: clamp(350px, 35vw, 450px);
+    margin-top: 80px;  
+  }
+}
+
+@media (max-width: 767px) {
+  .auro-frame {
+    height: clamp(300px, 40vw, 350px);
+  }
+}
+
+@media (max-width: 480px) {
+  .auro-frame {
+    height: clamp(250px, 50vw, 300px);  
+  }
+}
+
+/* end AuroShowcase.js */

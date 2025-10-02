@@ -67,21 +67,21 @@ function Navbar({ alertTrigger }) {
 
           <nav className="menu">
             <div className="dropdown">
-              <a href="#sanmlknm" className="dropdown-toggle">Home</a>
+              <a href="#" className="dropdown-toggle">Home</a>
               <div className="dropdown-menu">
-                <a href="#fhsdi">Home 1</a>
-                <a href="#fhsdi">Home 2</a>
-                <a href="#fhsdi">Home 3</a>
-                <a href="#fhsdi">Home 4</a>
-                <a href="#fhsdi">Home 5</a>
-                <a href="#fhsdi">Header Versions</a>
+                <a href="#">Home 1</a>
+                <a href="#">Home 2</a>
+                <a href="#">Home 3</a>
+                <a href="#">Home 4</a>
+                <a href="#">Home 5</a>
+                <a href="#">Header Versions</a>
               </div>
             </div>
 
             <a href="#sknckn">About</a>
 
             <div className="dropdown">
-              <a href="#sdkmvldkv" className="dropdown-toggle">Pages</a>
+              <a href="#" className="dropdown-toggle">Pages</a>
               <div className="dropdown-menu">
                 <a href="#">Our Team</a>
                 <a href="#">Team Details</a>

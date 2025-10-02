@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./css.css";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Footer from "./Footer";
+import AuroShowcase from "./AuroShowcase";
 import BannerSection from "./BannerSection";  
 
 
@@ -53,6 +54,7 @@ export default function Contact({ showAlertInNavbar }) {
 
   return (
     <>
+    <AuroShowcase />
       <div className="cf-container">
         {/* Left Column */}
         <div className="cf-left">
