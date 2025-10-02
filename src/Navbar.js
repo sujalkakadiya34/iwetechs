@@ -47,8 +47,6 @@ function Navbar({ alertTrigger }) {
 
   return (
     <>
- 
-
       {/* NAVBAR */}
       <header
         className="navbar-container"
@@ -83,8 +81,9 @@ function Navbar({ alertTrigger }) {
             <div className="dropdown">
               <a href="#" className="dropdown-toggle">Pages</a>
               <div className="dropdown-menu">
-                <a href="#">Our Team</a>
-                <a href="#">Team Details</a>
+                {/* ✅ Updated to Link */}
+                <Link to="/our-team">Our Team</Link>
+                <Link to="/our-team-detail">Team Details</Link>
               </div>
             </div>
 
@@ -129,7 +128,6 @@ function Navbar({ alertTrigger }) {
         <div className={`navbar-alert ${showAlert ? "visible" : ""}`}>
           {alertMsg}
         </div>
-
       </header>
     </>
   );

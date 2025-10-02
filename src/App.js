@@ -23,6 +23,7 @@ import LearnMore from "./LearnMore";
 import LearnMoreReady from "./LearnMoreReady";
 import AboutCompanyPage from "./AboutCompanyPage";
 import CtaLmBtn from "./ctalmbtn";
+import OurTeam from "./OurTeam";
 
 function App() {
   const [alertTrigger, setAlertTrigger] = useState(null);
@@ -64,6 +65,7 @@ function App() {
           path="/contact"
           element={<Contact showAlertInNavbar={showAlertInNavbar} />}
         />
+        <Route path="/our-team" element={<OurTeam />} />
       </Routes>
     </BrowserRouter>
   );
