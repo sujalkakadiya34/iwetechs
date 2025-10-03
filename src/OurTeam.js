@@ -15,8 +15,7 @@ export default function OurTeam() {
         </div>
       </div>
 
-      {/* Team detail section */}
-      <OurTeamDetail />
+       <OurTeamDetail />
     </>
   );
 }

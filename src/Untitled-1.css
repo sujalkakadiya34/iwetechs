@@ -1,0 +1,174 @@
+/* profile.jsx */
+.profileCard-section {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 40px auto;   /* centers the card with top-bottom spacing */
+  padding: 0 20px;     /* equal space left + right */
+  box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+}
+
+.profileCard-img {
+  flex: 1;
+  min-width: 300px;
+}
+
+.profileCard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profileCard-content {
+  flex: 1;
+  padding: 40px;
+}
+
+/* Name & Title */
+.profileCard-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+.profileCard-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #0676be;
+}
+
+/* Social Icons */
+.profileCard-social {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.profileCard-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  color: #0676be;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.profileCard-social a:hover {
+  background: #0676be;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Gradient Heading */
+.profileCard-heading {
+  font-size: 22px;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, #0676be, #20ace3, #0676be);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Paragraphs */
+.profileCard-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profileCard-section {
+    flex-direction: column;
+    padding: 20px; /* keep side spacing on mobile */
+  }
+  .profileCard-img {
+    width: 100%;
+    height: 350px;
+  }
+}
+
+
+/* end profile.jsx */
+
+
+
+
+import React from "react";
+import "./css.css";
+import { FaTwitter, FaFacebookF, FaPinterestP, FaInstagram } from "react-icons/fa";
+
+export default function ProfileCard() {
+  return (
+    <div className="profileCard-section">
+      {/* Left Image */}
+      <div className="profileCard-img">
+        <img
+          src="./assets/about-thumb-1.jpg"
+          alt="Profile"
+        />
+      </div>
+
+      {/* Right Content */}
+      <div className="profileCard-content">
+        <h2 className="profileCard-name">Jessica Brown</h2>
+        <h4 className="profileCard-title">Co founder & CEO</h4>
+
+        {/* Social Icons */}
+        <div className="profileCard-social">
+          <a href="#"><FaTwitter /></a>
+          <a href="#"><FaFacebookF /></a>
+          <a href="#"><FaPinterestP /></a>
+          <a href="#"><FaInstagram /></a>
+        </div>
+
+        {/* Gradient heading */}
+        <h3 className="profileCard-heading">
+          I help my clients stand out and they help me grow.
+        </h3>
+
+        {/* Description */}
+        <p className="profileCard-text">
+          Lorem ipsum dolor sit amet, con adipiscing elit tiam convallis elit id
+          impedi. Quisq commodo simply free ornare tortor.
+        </p>
+        <p className="profileCard-text">
+          If you are going to use a passage of Lorem Ipsum, you need to be sure
+          there isn’t anything embarrassing hidden in the middle of text.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
+in this code i want two deffrent components are make not a same box 
+my means img components are deffrent and details components are deffrent
+
+img components are left side and details components are right side 
+
+structure :
+
+left space | image section |     |employe details section |  right space   
+left space | image section |     |employe details section |  right space   
+left space | image section |     |employe details section |  right space   
+left space | image section |     |employe details section |  right space   
+left space | image section |     |employe details section |  right space    
+left space | image section |     |employe details section |  right space    
+left space | image section |     |employe details section |  right space   
+
+in this structure left and right side space are both 
+
+and two components has deffrent because i have chnages any components position 
+
+make it is 

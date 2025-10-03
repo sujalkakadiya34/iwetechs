@@ -81,7 +81,6 @@ function Navbar({ alertTrigger }) {
             <div className="dropdown">
               <a href="#" className="dropdown-toggle">Pages</a>
               <div className="dropdown-menu">
-                {/* ✅ Updated to Link */}
                 <Link to="/our-team">Our Team</Link>
                 <Link to="/our-team-detail">Team Details</Link>
               </div>

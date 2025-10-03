@@ -24,6 +24,8 @@ import LearnMoreReady from "./LearnMoreReady";
 import AboutCompanyPage from "./AboutCompanyPage";
 import CtaLmBtn from "./ctalmbtn";
 import OurTeam from "./OurTeam";
+import TeamDetails from "./TeamDetails";
+
 
 function App() {
   const [alertTrigger, setAlertTrigger] = useState(null);
@@ -66,6 +68,7 @@ function App() {
           element={<Contact showAlertInNavbar={showAlertInNavbar} />}
         />
         <Route path="/our-team" element={<OurTeam />} />
+        <Route path="/our-team-detail" element={<TeamDetails />} /> {/* ✅ Added */}
       </Routes>
     </BrowserRouter>
   );
