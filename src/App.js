@@ -25,6 +25,8 @@ import AboutCompanyPage from "./AboutCompanyPage";
 import CtaLmBtn from "./ctalmbtn";
 import OurTeam from "./OurTeam";
 import TeamDetails from "./TeamDetails";
+import Blog from "./Blog";
+import BlogDetails from "./BlogDetails";
 
 
 function App() {
@@ -69,6 +71,8 @@ function App() {
         />
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/our-team-detail" element={<TeamDetails />} /> {/* ✅ Added */}
+        <Route path="/Blog-b" element={<Blog />} />
+        <Route path="/BlogDetails-d" element={<BlogDetails />} />
       </Routes>
     </BrowserRouter>
   );
