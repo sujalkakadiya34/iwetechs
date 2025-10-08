@@ -1854,4 +1854,130 @@ textarea {
 }
 
 
+/* ===== Comments Section ===== */
+.comments-section {
+  margin-top: 40px;
+}
+
+.comments-section h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.comment-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.comment-avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 40px;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.comment-content h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-left: 27px;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.comment-content p {
+  margin-top: 5px;
+  color: gray;
+  font-size: 16px;
+  line-height: 2;
+  margin-left: 27px;
+}
+
+.reply-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #0676be;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 24px;
+  cursor: pointer;
+}
+
+.reply-btn:hover {
+  background: #009dff;
+}
+
+/* ===== Leave a Comment ===== */
+.leave-comment {
+  margin-top: 40px;
+}
+
+.leave-comment h3 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.leave-comment form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #eee;
+  font-size: 14px;
+  padding: 20px;
+  background-color: #dbedf3;
+}
+
+textarea {
+  padding: 12px;
+  border: 1px solid #eee;
+  min-height: 120px;
+  resize: none;
+  font-size: 14px;
+  background-color: #dbedf3;
+}
+
+.submit-btn {
+  background: #0676be;
+  color: #fff;
+  /* font-weight: bold; */
+  font-size: 15px;
+  padding: 22px 50px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.submit-btn:hover {
+  background: #019af8;
+}
+
+
 /* blogDetailscontent.js end */

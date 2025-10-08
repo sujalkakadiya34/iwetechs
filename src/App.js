@@ -27,7 +27,7 @@ import OurTeam from "./OurTeam";
 import TeamDetails from "./TeamDetails";
 import Blog from "./Blog";
 import BlogDetails from "./BlogDetails";
-
+import OurProjects from "./OurProjects";
 
 function App() {
   const [alertTrigger, setAlertTrigger] = useState(null);
@@ -73,6 +73,7 @@ function App() {
         <Route path="/our-team-detail" element={<TeamDetails />} /> {/* ✅ Added */}
         <Route path="/Blog-b" element={<Blog />} />
         <Route path="/BlogDetails-d" element={<BlogDetails />} />
+        <Route path="/OurProjects-p" element={<OurProjects />} />
       </Routes>
     </BrowserRouter>
   );
