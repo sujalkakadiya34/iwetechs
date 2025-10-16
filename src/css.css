@@ -1987,16 +1987,7 @@ textarea:focus {
 /* blogDetailscontent.js end */
 
 
-.comment-box {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
+/* Comment animation */
 .comment-box.fade-in {
   animation: fadeInDown 0.5s ease-in-out;
 }
@@ -2004,7 +1995,7 @@ textarea:focus {
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-15px);
   }
   to {
     opacity: 1;
@@ -2012,10 +2003,36 @@ textarea:focus {
   }
 }
 
-.comment-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: 15px;
-  object-fit: cover;
+/* 🔔 Custom Alert */
+.custom-alert {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  padding: 15px 25px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #fff;
+  font-size: 15px;
+  z-index: 9999;
+  animation: slideIn 0.4s ease forwards;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.custom-alert.success {
+  background-color: #28a745;
+}
+
+.custom-alert.error {
+  background-color: #dc3545;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

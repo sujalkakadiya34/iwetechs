@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./css.css";
 import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from "react-icons/fa";
 import Footer from "./Footer";
 
-// 🔸 Example API endpoint — replace with your real backend API
-const API_URL = "https://your-api-endpoint/comments";
+ const API_URL = "https://jsonplaceholder.typicode.com/comments";
 
 function BlogDetailsContent() {
   const latestPosts = [
@@ -27,63 +26,89 @@ function BlogDetailsContent() {
     { title: "We love design the latest trendy websites" },
   ];
 
-  // 🔸 State for comments
   const [comments, setComments] = useState([]);
-
-  // 🔸 State for form
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
 
-  // ✅ Load comments from API on mount
-  useEffect(() => {
+  const [alertMsg, setAlertMsg] = useState("");
+  const [alertType, setAlertType] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
+
+   const newCommentRef = useRef(null);
+
+   useEffect(() => {
     fetch(API_URL)
       .then(res => res.json())
       .then(data => {
-        const reversed = data.reverse(); // latest first
-        setComments(reversed.slice(0, 2)); // only 2 latest comments
+        const reversed = data.reverse();
+        setComments(reversed.slice(0, 2));
       })
       .catch(err => console.error("Error loading comments:", err));
   }, []);
 
-  // ✅ Submit new comment
+   const scrollToNewComment = () => {
+    if (newCommentRef.current) {
+const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 250;
+      window.scrollTo({
+        top: y,
+        behavior: "smooth"
+      });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!name.trim() || !email.trim() || !text.trim()) {
+      showCustomAlert("⚠️ Please fill all fields.", "error");
+      return;
+    }
 
     const newComment = {
       name,
       email,
-      text,
+      body: text,
       img: "./assets/user-icon1.webp",
-      date: new Date().toISOString()
+      date: new Date().toISOString(),
     };
 
     try {
-      await fetch(API_URL, {
+      const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newComment),
       });
 
-      // Add to UI with animation
-      setComments(prev => [newComment, ...prev].slice(0, 2));
+      if (!response.ok) throw new Error("Failed to submit comment");
 
-      // Reset form
-      setName("");
+       setComments(prev => [newComment, ...prev].slice(0, 2));
+
+       setName("");
       setEmail("");
       setText("");
+
+      showCustomAlert("✅ Your comment has been submitted successfully!", "success");
+
+       setTimeout(scrollToNewComment, 300);
     } catch (error) {
       console.error("Error adding comment:", error);
+      showCustomAlert("❌ Something went wrong. Please try again.", "error");
     }
+  };
+
+  const showCustomAlert = (message, type) => {
+    setAlertMsg(message);
+    setAlertType(type);
+    setShowAlert(true);
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
     <>
       <div className="blogDetails-section">
         <div className="blogDetails-container">
-          {/* Left Side */}
-          <div className="blogDetails-left">
-            {/* Blog Image */}
+           <div className="blogDetails-left">
             <div className="blogDetails-imgBox">
               <span className="date-badge">18 MAR</span>
               <img src="./assets/blogdetails.webp" alt="Blog Detail" className="blogDetails-image" />
@@ -105,7 +130,6 @@ function BlogDetailsContent() {
 
             <hr className="hr" />
 
-            {/* Tags + Social */}
             <div className="tags-social-section">
               <div className="tags">
                 <strong>Tags</strong>
@@ -121,8 +145,7 @@ function BlogDetailsContent() {
               </div>
             </div>
 
-            {/* Related Posts */}
-            <div className="related-posts">
+             <div className="related-posts">
               {relatedPosts.map((post, index) => (
                 <div key={index} className="related-post-box">
                   <h4>{post.title}</h4>
@@ -130,23 +153,25 @@ function BlogDetailsContent() {
               ))}
             </div>
 
-            {/* 🔹 Comments Section */}
-            <div className="comments-section">
+             <div className="comments-section">
               <h3>{comments.length} Comments</h3>
               {comments.map((c, index) => (
-                <div key={index} className="comment-box fade-in">
+                <div
+                  key={index}
+                  className="comment-box fade-in"
+                  ref={index === 0 ? newCommentRef : null} 
+                >
                   <img src={c.img} alt={c.name} className="comment-avatar" />
                   <div className="comment-content">
                     <h4>{c.name}</h4>
-                    <p>{c.text}</p>
+                    <p>{c.body || c.text}</p>
                   </div>
                   <button className="reply-btn">REPLY</button>
                 </div>
               ))}
             </div>
 
-            {/* 🔹 Leave a Comment */}
-            <div className="leave-comment">
+             <div className="leave-comment">
               <h3>Leave a Comment</h3>
               <form onSubmit={handleSubmit}>
                 <div className="form-row">
@@ -177,15 +202,12 @@ function BlogDetailsContent() {
             </div>
           </div>
 
-          {/* Right Side */}
-          <div className="blogDetails-right">
-            {/* Search */}
+           <div className="blogDetails-right">
             <div className="blogDetails-section-search">
               <input type="search" className="search-class" placeholder="Search here" />
               <span className="search-icon">🔍</span>
             </div>
 
-            {/* Latest Posts */}
             <div className="latest-posts">
               <h3 className="latest-posts-title">Latest Posts</h3>
               <div className="latest-posts-list">
@@ -201,7 +223,6 @@ function BlogDetailsContent() {
               </div>
             </div>
 
-            {/* Popular Posts */}
             <div className="popular-posts">
               <h3 className="popular-posts-title">Categories</h3>
               <div className="popular-posts-list">
@@ -214,7 +235,6 @@ function BlogDetailsContent() {
               </div>
             </div>
 
-            {/* Sidebar Tags */}
             <div className="sidebar-tags-box">
               <h3 className="sidebar-tags-heading">Tags</h3>
               <div className="sidebar-tags-grid">
@@ -228,6 +248,13 @@ function BlogDetailsContent() {
           </div>
         </div>
       </div>
+
+       {showAlert && (
+        <div className={`custom-alert ${alertType}`}>
+          {alertMsg}
+        </div>
+      )}
+
       <Footer />
     </>
   );
