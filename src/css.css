@@ -386,7 +386,7 @@
   min-width: 100%;         /* minimum width for small devices */
   max-width: 90%;           /* responsive for larger screens */
   background: white;
-  color: rgb(0, 255, 42);
+  color: green;
   font-weight: bold;
   text-align: center;
   padding: 12px 20px;
@@ -1964,6 +1964,10 @@ textarea {
   background-color: #dbedf3;
 }
 
+textarea:focus {
+  outline: none;
+}
+
 .submit-btn {
   background: #0676be;
   color: #fff;
@@ -1981,3 +1985,37 @@ textarea {
 
 
 /* blogDetailscontent.js end */
+
+
+.comment-box {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.comment-box.fade-in {
+  animation: fadeInDown 0.5s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.comment-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}

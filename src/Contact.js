@@ -87,7 +87,7 @@ export default function Contact({ showAlertInNavbar }) {
           </div>
 
           {/* Back to Home Button */}
-          <div style={{ marginTop: "39px", textAlign: "center" }}>
+          <div style={{ marginTop: "70px", textAlign: "center" }}>
             <Link to="/" className="cf-button-b-t-h" style={{ textDecoration: "none" }}>
               Back to Home
             </Link>

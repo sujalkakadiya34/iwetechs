@@ -99,7 +99,7 @@ function Navbar({ alertTrigger }) {
               <a href="#" className="dropdown-toggle">Projects</a>
               <div className="dropdown-menu">
                 <Link to="/OurProjects-p">Projects</Link>
-                <a href="#">Project Details</a>
+                <a href="">Project Details</a>
               </div>
             </div>
 
