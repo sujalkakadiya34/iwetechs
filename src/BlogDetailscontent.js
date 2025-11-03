@@ -69,7 +69,7 @@ const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 2
       name,
       email,
       body: text,
-      img: "./assets/user-icon1.webp",
+      img: "./assets/comment-1.webp",
       date: new Date().toISOString(),
     };
 
@@ -84,11 +84,11 @@ const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 2
 
        setComments(prev => [newComment, ...prev].slice(0, 2));
 
-       setName("");
+      setName("");
       setEmail("");
       setText("");
 
-      showCustomAlert("✅ Your comment has been submitted successfully!", "success");
+      showCustomAlert("submitted successfully!", "success");
 
        setTimeout(scrollToNewComment, 300);
     } catch (error) {
