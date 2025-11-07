@@ -3,7 +3,7 @@ import "./css.css";
 import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from "react-icons/fa";
 import Footer from "./Footer";
 
- const API_URL = "https://jsonplaceholder.typicode.com/comments";
+const API_URL = "/api/comments"; // our serverless API
 
 function BlogDetailsContent() {
   const latestPosts = [
@@ -35,25 +35,37 @@ function BlogDetailsContent() {
   const [alertType, setAlertType] = useState("");
   const [showAlert, setShowAlert] = useState(false);
 
-   const newCommentRef = useRef(null);
+  const newCommentRef = useRef(null);
 
-   useEffect(() => {
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        const reversed = data.reverse();
-        setComments(reversed.slice(0, 2));
-      })
-      .catch(err => console.error("Error loading comments:", err));
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        if (res.ok && data?.ok) {
+          setComments(
+            (data.items || []).map((c) => ({
+              name: c.name,
+              body: c.body,
+              img: c.avatar || "./assets/comment-1.webp",
+              date: c.createdAt,
+            }))
+          );
+        } else {
+          showCustomAlert("⚠️ Unable to load comments.", "error");
+        }
+      } catch (err) {
+        console.error("Error loading comments:", err);
+        showCustomAlert("⚠️ Unable to load comments.", "error");
+      }
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-   const scrollToNewComment = () => {
+  const scrollToNewComment = () => {
     if (newCommentRef.current) {
-const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 250;
-      window.scrollTo({
-        top: y,
-        behavior: "smooth"
-      });
+      const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 250;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -65,32 +77,35 @@ const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 2
       return;
     }
 
-    const newComment = {
-      name,
-      email,
-      body: text,
-      img: "./assets/comment-1.webp",
-      date: new Date().toISOString(),
-    };
+    const payload = { name, email, body: text };
 
     try {
       const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newComment),
+        body: JSON.stringify(payload),
       });
 
-      if (!response.ok) throw new Error("Failed to submit comment");
+      let data = {};
+      try { data = await response.json(); } catch {}
 
-       setComments(prev => [newComment, ...prev].slice(0, 2));
+      if (!response.ok || !data?.ok) {
+        throw new Error(data?.error || "Failed to submit");
+      }
 
+      const newItem = {
+        name: data.item.name,
+        body: data.item.body,
+        img: data.item.avatar || "./assets/comment-1.webp",
+        date: data.item.createdAt,
+      };
+
+      setComments((prev) => [newItem, ...prev]);
       setName("");
       setEmail("");
       setText("");
-
-      showCustomAlert("submitted successfully!", "success");
-
-       setTimeout(scrollToNewComment, 300);
+      showCustomAlert("✅ Submitted successfully!", "success");
+      setTimeout(scrollToNewComment, 300);
     } catch (error) {
       console.error("Error adding comment:", error);
       showCustomAlert("❌ Something went wrong. Please try again.", "error");
@@ -108,7 +123,7 @@ const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 2
     <>
       <div className="blogDetails-section">
         <div className="blogDetails-container">
-           <div className="blogDetails-left">
+          <div className="blogDetails-left">
             <div className="blogDetails-imgBox">
               <span className="date-badge">18 MAR</span>
               <img src="./assets/blogdetails.webp" alt="Blog Detail" className="blogDetails-image" />
@@ -145,7 +160,7 @@ const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 2
               </div>
             </div>
 
-             <div className="related-posts">
+            <div className="related-posts">
               {relatedPosts.map((post, index) => (
                 <div key={index} className="related-post-box">
                   <h4>{post.title}</h4>
@@ -153,25 +168,25 @@ const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 2
               ))}
             </div>
 
-             <div className="comments-section">
+            <div className="comments-section">
               <h3>{comments.length} Comments</h3>
               {comments.map((c, index) => (
                 <div
                   key={index}
                   className="comment-box fade-in"
-                  ref={index === 0 ? newCommentRef : null} 
+                  ref={index === 0 ? newCommentRef : null}
                 >
                   <img src={c.img} alt={c.name} className="comment-avatar" />
                   <div className="comment-content">
                     <h4>{c.name}</h4>
-                    <p>{c.body || c.text}</p>
+                    <p>{c.body}</p>
                   </div>
                   <button className="reply-btn">REPLY</button>
                 </div>
               ))}
             </div>
 
-             <div className="leave-comment">
+            <div className="leave-comment">
               <h3>Leave a Comment</h3>
               <form onSubmit={handleSubmit}>
                 <div className="form-row">
@@ -191,18 +206,18 @@ const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 2
                   />
                 </div>
                 <textarea
-                  placeholder="Write your comment..."
-                  className="form-row-input"
-                  value={text}
-                  onChange={(e) => setText(e.target.value)}
-                  required
+                    placeholder="Write your comment..."
+                    className="form-row-input"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    required
                 ></textarea>
                 <button type="submit" className="submit-btn">SUBMIT COMMENT</button>
               </form>
             </div>
           </div>
 
-           <div className="blogDetails-right">
+          <div className="blogDetails-right">
             <div className="blogDetails-section-search">
               <input type="search" className="search-class" placeholder="Search here" />
               <span className="search-icon">🔍</span>
@@ -249,9 +264,14 @@ const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 2
         </div>
       </div>
 
-       {showAlert && (
-        <div className={`custom-alert ${alertType}`}>
-          {alertMsg}
+      {showAlert && (
+        <div className="custom-alert-wrap">
+          <div className={`custom-alert ${alertType}`}>
+            <span className="ca-icon">🔔</span>
+            <span className="ca-msg">{alertMsg}</span>
+            <button className="ca-close" onClick={() => setShowAlert(false)}>×</button>
+            <div className="ca-progress" />
+          </div>
         </div>
       )}
 

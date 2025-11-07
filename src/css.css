@@ -1266,8 +1266,7 @@ textarea {
 
 /* blogDetailscontent.js */
 
-/* Main Layout */
-.blogDetails-section {
+ .blogDetails-section {
   width: 100%;
   padding: 40px 20px;
   display: flex;
@@ -1281,8 +1280,7 @@ textarea {
   gap: 30px;
 }
 
-/* Left Section */
-.blogDetails-left {
+ .blogDetails-left {
   flex: 2;
 }
 
@@ -1998,36 +1996,146 @@ textarea:focus {
   }
 }
 
-/* 🔔 Custom Alert */
-.custom-alert {
+/* ========= Responsive Alert (below navbar) ========= */
+:root { --nav-h: 80px; }
+
+.custom-alert-wrap {
   position: fixed;
-  top: 25px;
-  right: 25px;
-  padding: 15px 25px;
-  border-radius: 6px;
-  font-weight: 500;
+  top: var(--nav-h);
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 24px;
+  z-index: 990;
+  pointer-events: none;
+}
+
+.custom-alert.success { --acc: #a7d9b2d8; --acc-10: rgba(40,167,69,.10); --acc-25: rgba(40,167,69,.25); }
+.custom-alert.error { --acc: #dc3545; --acc-10: rgba(220,53,69,.10); --acc-25: rgba(220,53,69,.25); }
+
+.custom-alert {
+  position: relative;
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 12px;
+  width: auto;
+  max-width: 360px;
+  min-width: 240px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #121416;
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+  border: 1px solid var(--acc-25);
+  box-shadow: 0 18px 40px rgba(0,0,0,.25);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  backdrop-filter: saturate(140%) blur(8px);
   color: #fff;
-  font-size: 15px;
-  z-index: 9999;
-  animation: slideIn 0.4s ease forwards;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  font-weight: 600;
+  font-size: clamp(14px, 3.5vw, 15px);
+  line-height: 1.35;
+  transform-origin: top right;
+  animation: alertIn .38s cubic-bezier(.22,.9,.31,1.22) both;
 }
 
-.custom-alert.success {
-  background-color: #28a745;
+.custom-alert::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 12px 0 0 12px;
+  background: var(--acc);
+  opacity: .9;
 }
 
-.custom-alert.error {
-  background-color: #dc3545;
+.custom-alert .ca-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--acc-10);
+  outline: 1px solid var(--acc-25);
+  font-size: 16px;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(120%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.custom-alert .ca-msg {
+  margin-top: 2px;
+  word-break: break-word;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
+
+.custom-alert .ca-close {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  opacity: .85;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+}
+
+.custom-alert .ca-close:hover {
+  background: var(--acc-10);
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+.custom-alert .ca-progress {
+  position: absolute;
+  left: 4px;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(255,255,255,.15);
+  overflow: hidden;
+  border-radius: 0 0 12px 0;
+}
+
+.custom-alert .ca-progress::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--acc);
+  transform-origin: left;
+  animation: alertProgress var(--alert-duration, 5s) linear forwards;
+  opacity: .95;
+}
+
+@keyframes alertIn {
+  0% { opacity: 0; transform: translateY(-10px) scale(.98); filter: blur(2px); }
+  60% { opacity: 1; transform: translateY(0) scale(1.005); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes alertOut {
+  to { opacity: 0; transform: translateY(-8px) scale(.98); filter: blur(1px); }
+}
+
+@keyframes alertProgress {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+@media (min-width: 600px) {
+  .custom-alert { max-width: 420px; }
+}
+
+@media (min-width: 992px) {
+  .custom-alert { max-width: 460px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-alert { animation: none; }
+  .custom-alert .ca-progress::after { animation-duration: 1ms; }
+}
+

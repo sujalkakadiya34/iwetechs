@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import Contact from "./Contact";
 
-// Other pages/components (placeholders)
 import Bgimg from "./Bgimg";
 import AboutCompany from "./AboutCompany";
 import Service from "./Service";
@@ -28,6 +27,22 @@ import TeamDetails from "./TeamDetails";
 import Blog from "./Blog";
 import BlogDetails from "./BlogDetails";
 import OurProjects from "./OurProjects";
+import BlogDetailsContent from "./BlogDetailscontent";
+
+ 
+function UseNavbarHeightVar() {
+  useEffect(() => {
+    const setVar = () => {
+      const header = document.querySelector(".navbar-container");
+      const h = header?.offsetHeight || 80;  
+      document.documentElement.style.setProperty("--nav-h", `${h}px`);
+    };
+    setVar();
+    window.addEventListener("resize", setVar);
+    return () => window.removeEventListener("resize", setVar);
+  }, []);
+  return null;
+}
 
 function App() {
   const [alertTrigger, setAlertTrigger] = useState(null);
@@ -39,6 +54,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar alertTrigger={alertTrigger} />
+       <UseNavbarHeightVar />
 
       <Routes>
         <Route
@@ -70,14 +86,15 @@ function App() {
           element={<Contact showAlertInNavbar={showAlertInNavbar} />}
         />
         <Route path="/our-team" element={<OurTeam />} />
-        <Route path="/our-team-detail" element={<TeamDetails />} /> 
+        <Route path="/our-team-detail" element={<TeamDetails />} />
         <Route path="/Blog-b" element={<Blog />} />
         <Route path="/BlogDetails-d" element={<BlogDetails />} />
         <Route path="/OurProjects-p" element={<OurProjects />} />
+        <Route path="/" element={<BlogDetailsContent />} />
+        <Route path="/blog-details" element={<BlogDetailsContent />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
-// Servicesone
