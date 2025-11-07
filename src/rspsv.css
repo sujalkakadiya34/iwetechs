@@ -590,6 +590,71 @@ html, body {
     height: 220px;
   }
 }
+
+/* Center text and cards perfectly on large screens */
+@media (min-width: 1700px) {
+  .expert-section {
+    margin-top: -70px;
+    padding: 140px 200px;
+  }
+
+  .expert-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    text-align: center; /* ⬅️ Centers all text inside */
+  }
+
+  .expert-title {
+    font-size: 52px;
+    text-align: center; /* ⬅️ Ensures heading is centered */
+  }
+
+  .expert-text {
+    font-size: 20px;
+    text-align: center; /* ⬅️ Centers description paragraph */
+    max-width: 900px;
+    margin: 0 auto 80px;
+    margin-bottom: -80px;
+    margin-top: 35px;
+    line-height: 1.8;
+  }
+
+  /* === Team cards section === */
+  .team-container {
+    display: flex;
+    justify-content: center;  /* centers all cards */
+    align-items: flex-start;
+    flex-wrap: nowrap;        /* keeps 3 in one row */
+    gap: 60px;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+
+  .team-card {
+    margin-top: 32px;
+    flex: 1 1 30%;
+    max-width: 460px;
+  }
+
+  .expert-subtitle {
+    margin-right: 480px;
+  }
+
+  .team-img img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .team-name {
+    font-size: 26px;
+  }
+
+  .team-role {
+    font-size: 18px;
+  }
+}
+
 /* end Expert.js */
 
 /* Solutionimage.js */

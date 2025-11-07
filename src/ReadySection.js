@@ -2,14 +2,13 @@
 import React from "react";
 import "./Dealing.css";
 import { FaCheckCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";  // ✅ import Link
+import { Link } from "react-router-dom";   
 
 const ReadySection = () => {
   return (
     <section className="ready-section">
       <div className="ready-container">
-        {/* Left Circle Image */}
-        <div className="ready-left">
+         <div className="ready-left">
           <img
             src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
             alt="Team Work"
@@ -17,8 +16,7 @@ const ReadySection = () => {
           />
         </div>
 
-        {/* Right Content */}
-        <div className="ready-right">
+         <div className="ready-right">
           <h1 className="ready-title">We’re Ready Develop Your Site!</h1>
 
           <ul className="ready-list">
@@ -37,8 +35,7 @@ const ReadySection = () => {
           </ul>
 
           <div className="ready-btn-wrapper">
-            {/* ✅ Link instead of button */}
-            <Link to="/learn-ready" className="ready-btn">
+             <Link to="/learn-ready" className="ready-btn">
               LEARN MORE
             </Link>
           </div>

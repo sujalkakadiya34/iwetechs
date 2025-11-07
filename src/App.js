@@ -70,7 +70,7 @@ function App() {
           element={<Contact showAlertInNavbar={showAlertInNavbar} />}
         />
         <Route path="/our-team" element={<OurTeam />} />
-        <Route path="/our-team-detail" element={<TeamDetails />} />
+        <Route path="/our-team-detail" element={<TeamDetails />} /> 
         <Route path="/Blog-b" element={<Blog />} />
         <Route path="/BlogDetails-d" element={<BlogDetails />} />
         <Route path="/OurProjects-p" element={<OurProjects />} />
@@ -80,3 +80,4 @@ function App() {
 }
 
 export default App;
+// Servicesone

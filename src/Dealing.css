@@ -356,25 +356,10 @@
 
  /* end */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+ /* ===== Ready Section =====*/
  .ready-section {
   width: 100%;
-  max-width: 1150px;           
+  max-width: 1400px;           
   flex: 2;
   min-height: 350px;
   background: 
@@ -386,7 +371,7 @@
   color: white;
   overflow-x: hidden;  
   margin: 0 auto;              
-  padding: 0 0px;            
+  padding: 0px 20px;            
 }
  
 .ready-container {
@@ -403,6 +388,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  margin-left: -26px;
 }
 
 .ready-img {
@@ -422,6 +408,7 @@
   flex: 2;
   max-width: 600px;
   margin-left: 150px;
+  margin-right: -80px;
 }
 
 .ready-title {

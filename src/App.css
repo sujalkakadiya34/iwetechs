@@ -1813,14 +1813,17 @@ body {
   padding: 50px 80px;
   color: #fff;
   margin-top: 60px;
+    display: flex;
+  justify-content: center;
 }
 
 .ctaInner {
   display: flex;
-  align-items: center;
+  margin: 0 auto;              /* remove uneven spacing */
+  max-width: 1200px;           /* keep same width */
+  width: 100%;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 40px;
+  align-items: center;
   flex-wrap: wrap;
 }
  
@@ -1858,10 +1861,18 @@ body {
 
 /* ===== Footer ===== */
 .footer {
-  background: #1a1423;
+  background: #1e162900;
   color: #ccc;
   padding: 60px 40px 20px;
   font-size: 14px;
+
+  background-image: 
+    linear-gradient(rgba(35, 21, 45, 0), rgba(35, 21, 45, 0)),   
+    url('../public/assets/footer-bg.jpg');  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
 }
 
 .footer-container {
@@ -1869,10 +1880,10 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 40px;
   max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 80px;
-  margin-left: 48px;
+  margin: 0 auto !important;
+  justify-content: center;
+  padding: 80px 0;
+  align-items: center;
 }
  
 .footer-logo {
@@ -2039,9 +2050,9 @@ body {
   margin-bottom: -20px;
   margin-left: -40px;
   margin-right: -40px;
-  padding: 18px 0;   
+  padding: 30px 0;   
   text-align: center;
-  font-size: 14px;   
+  font-size: 15px;   
   color: #b0a9c0;    
 }
 
@@ -2060,7 +2071,7 @@ body {
  color: #00c3ff;
 }
 
-
+/* end Footer.js  */
 
 /* LearnMoreReady.js */
 

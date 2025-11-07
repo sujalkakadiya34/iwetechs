@@ -108,6 +108,27 @@ function OurProjectscontent() {
           return <span key={i} className={`dot ${active ? "active" : ""}`}></span>;
         })}
       </div>
+
+            <div className="slider-viewport">
+        <div ref={trackRef} className="slider-track" style={trackStyle}>
+          {extended.map((p, i) => (
+            <div className="slide" key={i}>
+              <img className="slide-img" src={p.img} alt={p.title} />
+              <div className="slide-overlay">
+                <h3 className="slide-title">{p.title}</h3>
+                <p className="slide-cat">{p.category}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="slider-dots">
+        {PROJECTS.map((_, i) => {
+          const active = index % PROJECTS.length === i;
+          return <span key={i} className={`dot ${active ? "active" : ""}`}></span>;
+        })}
+      </div>
     </section>
   );
 }

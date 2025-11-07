@@ -21,13 +21,12 @@ export default function Contact({ showAlertInNavbar }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  // Smooth scroll to navbar alert
   const scrollToAlert = () => {
     const alertElement = document.querySelector(".navbar-alert");
     if (alertElement) {
       alertElement.classList.add("show");
       alertElement.scrollIntoView({ behavior: "smooth" });
-      setTimeout(() => alertElement.classList.remove("show"), 4000); // hide after 4s
+      setTimeout(() => alertElement.classList.remove("show"), 4000); 
     }
   };
 

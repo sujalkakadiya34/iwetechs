@@ -1,12 +1,10 @@
-/* ===== Contact Page ===== */
-.contact-page {
-  margin-top: 100px; /* space for navbar */
+ .contact-page {
+  margin-top: 100px;  
   font-family: "Poppins", sans-serif;
 }
 
-/* ===== Hero Section ===== */
-.contact-hero {
-  height: 60vh; /* responsive height */
+ .contact-hero {
+  height: 60vh;  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,8 +16,7 @@
   background: gray;
 }
 
-/* Dark overlay for text readability */
-.contact-overlay {
+ .contact-overlay {
   /* background: rgba(0, 0, 0, 0.6); */
   padding: 30px 50px;
   border-radius: 12px;
@@ -47,7 +44,6 @@
   text-decoration: underline;
 }
 
-/* ===== Contact Content ===== */
 .contact-content {
   max-width: 900px;
   margin: 60px auto;
@@ -60,8 +56,7 @@
   line-height: 1.6;
 }
 
-/* ===== Contact Info ===== */
-.contact-info {
+ .contact-info {
   margin-top: 40px;
 }
 
@@ -482,8 +477,8 @@
   position: absolute;
   inset: 0; 
   background: linear-gradient(
-    rgba(32, 172, 227, 0.3),
-    rgba(32, 172, 227, 0.5)
+    rgba(206, 218, 223, 0.3),
+    rgba(50, 160, 200, 1.5)
   );
   display: flex;
   flex-direction: column;
@@ -580,8 +575,8 @@
   position: absolute;
   inset: 0; 
   background: linear-gradient(
-    rgba(32, 172, 227, 0.3),
-    rgba(32, 172, 227, 0.5)
+    rgba(206, 218, 223, 0.3),
+    rgba(50, 160, 200, 1.9)
   );
   display: flex;
   flex-direction: column;
