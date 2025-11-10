@@ -89,11 +89,8 @@ function Navbar({ alertTrigger }) {
             <div className="dropdown">
               <a href="#" className="dropdown-toggle">Services</a>
               <div className="dropdown-menu">
-<<<<<<< HEAD
-                <Link to="/">Service 1</Link>
-=======
+                {/* ✅ keep the correct route here */}
                 <Link to="/Services-one">Service 1</Link>
->>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
                 <a href="#">Service 2</a>
                 <a href="#">Service 3</a>
               </div>
@@ -103,7 +100,7 @@ function Navbar({ alertTrigger }) {
               <a href="#" className="dropdown-toggle">Projects</a>
               <div className="dropdown-menu">
                 <Link to="/OurProjects-p">Projects</Link>
-                <a href="">Project Details</a>
+                <a href="#">Project Details</a>
               </div>
             </div>
 
