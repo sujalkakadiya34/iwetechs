@@ -3,7 +3,11 @@ import "./css.css";
 import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from "react-icons/fa";
 import Footer from "./Footer";
 
+<<<<<<< HEAD
 const API_URL = "/api/comments"; // our serverless API
+=======
+ const API_URL = "https://jsonplaceholder.typicode.com/comments";
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
 
 function BlogDetailsContent() {
   const latestPosts = [
@@ -35,6 +39,7 @@ function BlogDetailsContent() {
   const [alertType, setAlertType] = useState("");
   const [showAlert, setShowAlert] = useState(false);
 
+<<<<<<< HEAD
   const newCommentRef = useRef(null);
 
   useEffect(() => {
@@ -66,6 +71,27 @@ function BlogDetailsContent() {
     if (newCommentRef.current) {
       const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 250;
       window.scrollTo({ top: y, behavior: "smooth" });
+=======
+   const newCommentRef = useRef(null);
+
+   useEffect(() => {
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        const reversed = data.reverse();
+        setComments(reversed.slice(0, 2));
+      })
+      .catch(err => console.error("Error loading comments:", err));
+  }, []);
+
+   const scrollToNewComment = () => {
+    if (newCommentRef.current) {
+const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 250;
+      window.scrollTo({
+        top: y,
+        behavior: "smooth"
+      });
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
     }
   };
 
@@ -77,12 +103,23 @@ function BlogDetailsContent() {
       return;
     }
 
+<<<<<<< HEAD
     const payload = { name, email, body: text };
+=======
+    const newComment = {
+      name,
+      email,
+      body: text,
+      img: "./assets/comment-1.webp",
+      date: new Date().toISOString(),
+    };
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
 
     try {
       const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+<<<<<<< HEAD
         body: JSON.stringify(payload),
       });
 
@@ -106,6 +143,22 @@ function BlogDetailsContent() {
       setText("");
       showCustomAlert("✅ Submitted successfully!", "success");
       setTimeout(scrollToNewComment, 300);
+=======
+        body: JSON.stringify(newComment),
+      });
+
+      if (!response.ok) throw new Error("Failed to submit comment");
+
+       setComments(prev => [newComment, ...prev].slice(0, 2));
+
+      setName("");
+      setEmail("");
+      setText("");
+
+      showCustomAlert("submitted successfully!", "success");
+
+       setTimeout(scrollToNewComment, 300);
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
     } catch (error) {
       console.error("Error adding comment:", error);
       showCustomAlert("❌ Something went wrong. Please try again.", "error");
@@ -123,7 +176,11 @@ function BlogDetailsContent() {
     <>
       <div className="blogDetails-section">
         <div className="blogDetails-container">
+<<<<<<< HEAD
           <div className="blogDetails-left">
+=======
+           <div className="blogDetails-left">
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
             <div className="blogDetails-imgBox">
               <span className="date-badge">18 MAR</span>
               <img src="./assets/blogdetails.webp" alt="Blog Detail" className="blogDetails-image" />
@@ -160,7 +217,11 @@ function BlogDetailsContent() {
               </div>
             </div>
 
+<<<<<<< HEAD
             <div className="related-posts">
+=======
+             <div className="related-posts">
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
               {relatedPosts.map((post, index) => (
                 <div key={index} className="related-post-box">
                   <h4>{post.title}</h4>
@@ -168,25 +229,41 @@ function BlogDetailsContent() {
               ))}
             </div>
 
+<<<<<<< HEAD
             <div className="comments-section">
+=======
+             <div className="comments-section">
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
               <h3>{comments.length} Comments</h3>
               {comments.map((c, index) => (
                 <div
                   key={index}
                   className="comment-box fade-in"
+<<<<<<< HEAD
                   ref={index === 0 ? newCommentRef : null}
+=======
+                  ref={index === 0 ? newCommentRef : null} 
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
                 >
                   <img src={c.img} alt={c.name} className="comment-avatar" />
                   <div className="comment-content">
                     <h4>{c.name}</h4>
+<<<<<<< HEAD
                     <p>{c.body}</p>
+=======
+                    <p>{c.body || c.text}</p>
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
                   </div>
                   <button className="reply-btn">REPLY</button>
                 </div>
               ))}
             </div>
 
+<<<<<<< HEAD
             <div className="leave-comment">
+=======
+             <div className="leave-comment">
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
               <h3>Leave a Comment</h3>
               <form onSubmit={handleSubmit}>
                 <div className="form-row">
@@ -206,18 +283,30 @@ function BlogDetailsContent() {
                   />
                 </div>
                 <textarea
+<<<<<<< HEAD
                     placeholder="Write your comment..."
                     className="form-row-input"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     required
+=======
+                  placeholder="Write your comment..."
+                  className="form-row-input"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  required
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
                 ></textarea>
                 <button type="submit" className="submit-btn">SUBMIT COMMENT</button>
               </form>
             </div>
           </div>
 
+<<<<<<< HEAD
           <div className="blogDetails-right">
+=======
+           <div className="blogDetails-right">
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
             <div className="blogDetails-section-search">
               <input type="search" className="search-class" placeholder="Search here" />
               <span className="search-icon">🔍</span>
@@ -270,7 +359,10 @@ function BlogDetailsContent() {
             <span className="ca-icon">🔔</span>
             <span className="ca-msg">{alertMsg}</span>
             <button className="ca-close" onClick={() => setShowAlert(false)}>×</button>
+<<<<<<< HEAD
             <div className="ca-progress" />
+=======
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
           </div>
         </div>
       )}

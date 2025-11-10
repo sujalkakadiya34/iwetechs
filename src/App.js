@@ -27,8 +27,12 @@ import TeamDetails from "./TeamDetails";
 import Blog from "./Blog";
 import BlogDetails from "./BlogDetails";
 import OurProjects from "./OurProjects";
+<<<<<<< HEAD
 import BlogDetailsContent from "./BlogDetailscontent";
 
+=======
+import Servicesone from "./Servicesone";
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
  
 function UseNavbarHeightVar() {
   useEffect(() => {
@@ -90,11 +94,20 @@ function App() {
         <Route path="/Blog-b" element={<Blog />} />
         <Route path="/BlogDetails-d" element={<BlogDetails />} />
         <Route path="/OurProjects-p" element={<OurProjects />} />
+<<<<<<< HEAD
         <Route path="/" element={<BlogDetailsContent />} />
         <Route path="/blog-details" element={<BlogDetailsContent />} />
+=======
+
+        <Route path="/Services-one" element={<Servicesone />} />
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a6aa3e81804d8130cead094b85cc21b83b3e1f50
