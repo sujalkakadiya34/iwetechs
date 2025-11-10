@@ -1,0 +1,35 @@
+1) in this code if they are i have/user can enter your information and submit this comment to the this comment are show in commented user opened site 
+but other user site has not show this comment 
+so make a anywhere user a sumbit a comment to show in the all the user not a submited user site 
+website url is : iwetechs.vercel.app
+i have host my site in vercel.app
+
+2) and if they are user can sumbit comment to the this ubmited comment 
+-user entred his name 
+-user entered his email and
+-user endred comment message are 
+show in my email if they are anywhere user can submit a his comment 
+
+my gmail is :- "sujalkakadia1296@gmail.com"
+
+
+
+MONGODB_URI → your MongoDB Atlas connection string
+
+MONGODB_DB → iwetechs (or any db name)
+
+GMAIL_USER → sujalkakadiya1296@gmail.com
+
+GMAIL_APP_PASS → Gmail App Password (create at Google Account → Security → App passwords)
+
+NOTIFY_TO → sujalkakadiya1296@gmail.com
+
+
+
+Got it — you want real, shared comments (visible to everyone on your site), plus an email to you whenever someone submits one — and you don’t want any CSS changes. Below is a drop-in, Vercel-friendly solution:
+
+A tiny serverless API (/api/comments) that saves comments to MongoDB Atlas and emails you via Gmail (Nodemailer).
+
+Minimal edits in your React file to use that API instead of the mock jsonplaceholder.
+
+No CSS touches.
