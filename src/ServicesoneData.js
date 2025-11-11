@@ -1,6 +1,5 @@
 import React from "react";
 import "./Services.css";
-import Servicesone from "./Servicesone";
 
 function  ServicesoneData() {
   return (
@@ -43,8 +42,6 @@ function  ServicesoneData() {
         <button className="services-button">LEARN MORE</button>
       </div>
     </section>
-
-    <Servicesone />
 
     </>
   );
