@@ -12,8 +12,7 @@ function Navbar({ alertTrigger }) {
   const timerRef = useRef(null);
   const triggeredRef = useRef(false);
 
-  // Navbar scroll hide/show
-  useEffect(() => {
+   useEffect(() => {
     function handleScroll() {
       if (!triggeredRef.current && window.scrollY > 0) {
         triggeredRef.current = true;
@@ -33,8 +32,7 @@ function Navbar({ alertTrigger }) {
     };
   }, []);
 
-  // Show alert when triggered by Contact.js
-  useEffect(() => {
+   useEffect(() => {
     if (!alertTrigger) return;
     if (alertTrigger.message) {
       setAlertMsg(alertTrigger.message);
@@ -47,8 +45,7 @@ function Navbar({ alertTrigger }) {
 
   return (
     <>
-      {/* NAVBAR */}
-      <header
+       <header
         className="navbar-container"
         style={{
           transform: visible ? "translateY(0)" : "translateY(-120%)",
@@ -67,12 +64,13 @@ function Navbar({ alertTrigger }) {
             <div className="dropdown">
               <a href="#" className="dropdown-toggle">Home</a>
               <div className="dropdown-menu">
-                <a href="#">Home 1</a>
+                {/* <Link to="/Home-1">Home</Link> */}
+                {/* <a href="#">Home 1</a>
                 <a href="#">Home 2</a>
                 <a href="#">Home 3</a>
                 <a href="#">Home 4</a>
                 <a href="#">Home 5</a>
-                <a href="#">Header Versions</a>
+                <a href="#">Header Versions</a> */}
               </div>
             </div>
 
@@ -89,8 +87,7 @@ function Navbar({ alertTrigger }) {
             <div className="dropdown">
               <a href="#" className="dropdown-toggle">Services</a>
               <div className="dropdown-menu">
-                {/* ✅ keep the correct route here */}
-                <Link to="/Services-one">Service 1</Link>
+                 <Link to="/Services-one">Service 1</Link>
                 <a href="#">Service 2</a>
                 <a href="#">Service 3</a>
               </div>
