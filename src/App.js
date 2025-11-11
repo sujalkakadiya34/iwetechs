@@ -55,7 +55,6 @@ function App() {
     <BrowserRouter>
       <Navbar alertTrigger={alertTrigger} />
       <UseNavbarHeightVar />
-
       <Routes>
         <Route
           path="/"
