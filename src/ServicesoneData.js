@@ -2,7 +2,7 @@ import React from "react";
 import "./Services.css";
 import Servicesone from "./Servicesone";
 
-function ServicesoneData() {
+function  ServicesoneData() {
   return (
     <>
     <section className="services-section">
