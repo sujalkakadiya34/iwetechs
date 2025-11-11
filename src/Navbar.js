@@ -87,9 +87,9 @@ function Navbar({ alertTrigger }) {
             <div className="dropdown">
               <a href="#" className="dropdown-toggle">Services</a>
               <div className="dropdown-menu">
-                 <Link to="/Services-one">Service 1</Link>
-                <a href="#">Service 2</a>
-                <a href="#">Service 3</a>
+                 <Link to="/services-one">Service 1</Link>
+                 <Link to="/Services-two">Service 2</Link>
+                 <Link to="/Services-three">Service 3</Link>
               </div>
             </div>
 

@@ -3,7 +3,6 @@ import "./css.css";
 import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from "react-icons/fa";
 import Footer from "./Footer";
 
-// choose one working API (public placeholder)
 const API_URL = "https://jsonplaceholder.typicode.com/comments";
 
 function BlogDetailsContent() {
@@ -38,7 +37,6 @@ function BlogDetailsContent() {
 
   const newCommentRef = useRef(null);
 
-  // Load comments
   useEffect(() => {
     fetch(API_URL)
       .then((res) => res.json())
@@ -49,7 +47,6 @@ function BlogDetailsContent() {
       .catch((err) => console.error("Error loading comments:", err));
   }, []);
 
-  // Scroll to top comment when new one added
   const scrollToNewComment = () => {
     if (newCommentRef.current) {
       const y = newCommentRef.current.getBoundingClientRect().top + window.scrollY - 250;
@@ -57,7 +54,6 @@ function BlogDetailsContent() {
     }
   };
 
-  // Submit a new comment
   const handleSubmit = async (e) => {
     e.preventDefault();
 
