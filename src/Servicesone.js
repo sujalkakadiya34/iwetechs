@@ -1,21 +1,17 @@
 import React from 'react'
 import "./Services.css";
-import ServicesoneData from './ServicesoneData';
 
 function Servicesone() {
   return (
     <>
-      <div className="Servicesone-frame">
-        <div className="Servicesone-layer">
-          <h1 className="Servicesone-title">Services</h1>
-          <p className="Servicesone-breadcrumbs">
-            HOME <span>/</span> OUR TEAM
-            <h1>kjcnksan</h1>
+        <div className="ourteam-frame">
+        <div className="ourteam-layer">
+          <h1 className="ourteam-title">services</h1>
+          <p className="ourteam-breadcrumbs">
+            HOME <span>/</span>SERVICES
           </p>
         </div>
       </div>
-
-      <ServicesoneData/>
     </>
   )
 }

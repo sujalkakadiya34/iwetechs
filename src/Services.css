@@ -6,6 +6,7 @@
   background: #ffffff;
   position: relative;
   overflow: hidden;
+  margin-top: 100px;
 }
 
 /* Left Side */
@@ -40,7 +41,7 @@
 }
 
 .services-image {
-  width: 420px;
+  width: 500px;
   z-index: 2;
   position: relative;
   border-radius: 10px;

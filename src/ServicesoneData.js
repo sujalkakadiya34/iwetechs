@@ -1,15 +1,17 @@
 import React from "react";
 import "./Services.css";
+import Servicesone from "./Servicesone";
 
 function  ServicesoneData() {
   return (
     <>
+    <Servicesone />
     <section className="services-section">
       {/* Left side: Image with gradient circle */}
       <div className="services-left">
         <div className="services-gradient-circle"></div>
         <img
-          src="https://cdn.pixabay.com/photo/2016/03/27/19/15/virtual-reality-1287209_1280.jpg"
+          src="./assets/vrglass.jpg"
           alt="VR Illustration"
           className="services-image"
         />
@@ -42,7 +44,6 @@ function  ServicesoneData() {
         <button className="services-button">LEARN MORE</button>
       </div>
     </section>
-
     </>
   );
 }
