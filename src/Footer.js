@@ -10,8 +10,6 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        
- 
         <div className="footer-col">
         <div className="footer-logo">
             <img src="./assets/circlelogo.png" alt="iwetechs logo" />
