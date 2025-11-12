@@ -64,13 +64,12 @@ function Navbar({ alertTrigger }) {
             <div className="dropdown">
               <a href="#" className="dropdown-toggle">Home</a>
               <div className="dropdown-menu">
-                {/* <Link to="/Home-1">Home</Link> */}
-                {/* <a href="#">Home 1</a>
+                <a href="#">Home 1</a>
                 <a href="#">Home 2</a>
                 <a href="#">Home 3</a>
                 <a href="#">Home 4</a>
                 <a href="#">Home 5</a>
-                <a href="#">Header Versions</a> */}
+                <a href="#">Header Versions</a> 
               </div>
             </div>
 
