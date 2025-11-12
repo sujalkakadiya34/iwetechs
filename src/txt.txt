@@ -1,35 +1,150 @@
-1) in this code if they are i have/user can enter your information and submit this comment to the this comment are show in commented user opened site 
-but other user site has not show this comment 
-so make a anywhere user a sumbit a comment to show in the all the user not a submited user site 
-website url is : iwetechs.vercel.app
-i have host my site in vercel.app
+ /* ===== FOOTER BASE ===== */
+.footer {
+  background: #111827;
+  color: #e6eef8;
+  padding: 60px 0 20px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
 
-2) and if they are user can sumbit comment to the this ubmited comment 
--user entred his name 
--user entered his email and
--user endred comment message are 
-show in my email if they are anywhere user can submit a his comment 
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  align-items: start;
+}
 
-my gmail is :- "sujalkakadia1296@gmail.com"
+/* ===== FOOTER ELEMENTS ===== */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.footer-logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 
+.footer-socials a {
+  color: #e6eef8;
+  font-size: 18px;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
 
-MONGODB_URI → your MongoDB Atlas connection string
+.footer-socials a:hover {
+  color: #0b74de;
+}
 
-MONGODB_DB → iwetechs (or any db name)
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
 
-GMAIL_USER → sujalkakadiya1296@gmail.com
+.footer-col-ul {
+  list-style: none;
+  padding: 0;
+}
 
-GMAIL_APP_PASS → Gmail App Password (create at Google Account → Security → App passwords)
+.footer-col-ul li {
+  margin-bottom: 8px;
+}
 
-NOTIFY_TO → sujalkakadiya1296@gmail.com
+.footer-col-ul a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
+.footer-col-ul a:hover {
+  color: #0b74de;
+}
 
+.footer-col-newsletter-p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
 
-Got it — you want real, shared comments (visible to everyone on your site), plus an email to you whenever someone submits one — and you don’t want any CSS changes. Below is a drop-in, Vercel-friendly solution:
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  max-width: 260px;
+}
 
-A tiny serverless API (/api/comments) that saves comments to MongoDB Atlas and emails you via Gmail (Nodemailer).
+.newsletter-form input {
+  border: none;
+  padding: 10px 15px;
+  flex: 1;
+  outline: none;
+}
 
-Minimal edits in your React file to use that API instead of the mock jsonplaceholder.
+.newsletter-form button {
+  background: #0b74de;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
 
-No CSS touches.
+/* ===== CONTACT SECTION ===== */
+.footer-contact .contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-contact .icon {
+  color: #0b74de;
+  margin-top: 3px;
+}
+
+/* ===== FOOTER BOTTOM ===== */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.footer-bottom a {
+  color: #0b74de;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ===== LAPTOP CUSTOM MARGIN (your screen only) ===== */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .footer-container {
+    padding-left: 80px;
+    padding-right: 80px; /* Adds custom margin only for laptop */
+    grid-template-columns: repeat(4, 1fr); /* Ensures all 4 columns in one row */
+  }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .newsletter-form {
+    margin: 0 auto;
+  }
+
+  .footer-contact .contact-item {
+    justify-content: center;
+  }
+}

@@ -1,4 +1,5 @@
 /* ========== BASE STYLES ========== */
+/* start service section */
 .services-section {
   display: flex;
   align-items: center;
@@ -44,6 +45,12 @@
   width: 600px;
   border-radius: 20px;
   z-index: 2;
+  position: relative;
+  border-radius: 10px;
+  background-image: url('../public/assets/VRGlasessimage.png');
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: -90% 190%;
 }
 
 /* ===== Right Side ===== */
@@ -314,27 +321,7 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Wrapper with diagonal purple background like the screenshot */
+/* ========== WHY SECTION ========== */
 .why-wrap {
   position: relative;
   background: linear-gradient(135deg, #6e00ff 0%, #7d2cf0 50%, #ad73ff 100%);
@@ -343,22 +330,20 @@
   padding: 90px 7%;
 }
 
-/* faint diagonal bands */
 .why-wrap::before,
 .why-wrap::after {
   content: "";
   position: absolute;
   inset: -10% -20%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.07), transparent 60%);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.07), transparent 60%);
   transform: skewX(-25deg);
   pointer-events: none;
 }
 .why-wrap::after {
   inset: 35% -25% -35% -15%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.07), transparent 60%);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.07), transparent 60%);
 }
 
-/* two-column layout; image must be on right */
 .why-inner {
   max-width: 1320px;
   margin: 0 auto;
@@ -368,7 +353,6 @@
   column-gap: 56px;
 }
 
-/* LEFT: text */
 .why-text .why-kicker {
   font-weight: 600;
   opacity: 0.9;
@@ -390,7 +374,6 @@
   margin-bottom: 22px;
 }
 
-/* bullets like screenshot */
 .why-bullets {
   list-style: none;
   padding: 0;
@@ -414,7 +397,6 @@
   opacity: 0.95;
 }
 
-/* signature */
 .why-signature {
   font-family: "Brush Script MT", "Segoe Script", cursive;
   font-size: 44px;
@@ -422,11 +404,11 @@
   margin-bottom: 6px;
 }
 
-/* RIGHT: image with purple badge */
 .why-media {
   position: relative;
   justify-self: end;
 }
+
 .why-img {
   width: 560px;
   max-width: 42vw;
@@ -435,7 +417,8 @@
   display: block;
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
 }
-.why-badge {  
+
+.why-badge {
   position: absolute;
   left: -70px;
   bottom: 70px;
@@ -450,8 +433,15 @@
 
 /* Responsive */
 @media (max-width: 1100px) {
-  .why-title { font-size: 44px; }
-  .why-badge { width: 160px; height: 130px; left: -52px; bottom: 52px; }
+  .why-title {
+    font-size: 44px;
+  }
+  .why-badge {
+    width: 160px;
+    height: 130px;
+    left: -52px;
+    bottom: 52px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -470,9 +460,12 @@
     left: 24px;
     bottom: -24px;
   }
-  .why-title { font-size: 36px; }
+  .why-title {
+    font-size: 36px;
+  }
 }
 
+<<<<<<< HEAD
 
 
 
@@ -990,3 +983,6 @@
     top: 14px;
   }
 }
+=======
+/* end service section */
+>>>>>>> 071a39414223b840aa14b6054034bb87839ddfe8
