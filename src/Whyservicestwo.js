@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./Services.css";
 import Servicesone from "./Servicesone";
+import Footer from "./Footer";
 
 function Whyservicestwo() {
   return (
@@ -47,11 +48,6 @@ function Whyservicestwo() {
         </div>
 
         <div className="Whyservicestwo-section-content-signature">
-          {/* <img
-            src="./assets/service-item-1.webp"
-            alt="Signature"
-            className="Whyservicestwo-section-content-signature-img"
-          /> */}
           <p className="Whyservicestwo-section-content-signature-p1">
             <b> . </b>
           </p>
@@ -60,11 +56,72 @@ function Whyservicestwo() {
 
       {/* ===== Autoplay Infinite Slider ===== */}
       <Ws2Carousel />
+
+      {/* ====== NEW Purple Banner Section Added ====== */}
+      <WhyServicesBanner />
+
+      <Footer />
     </>
   );
 }
 
-/* ======= Carousel Component ======= */
+/* ===========================================================
+   NEW COMPONENT SECTION YOU REQUESTED
+=========================================================== */
+export function WhyServicesBanner() {
+  return (
+    <section className="why-banner">
+      <div className="why-banner__bg" aria-hidden="true" />
+      <div className="why-banner__inner">
+        <div className="why-banner__left">
+          <span className="why-banner__eyebrow">— Technology Path</span>
+          <h2 className="why-banner__title">
+            Trusted IT Solution & <br />
+            Service Business <br></br> Agency
+          </h2>
+          {/* <p className="why-banner__lead">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.
+          </p> */}
+        </div>
+
+        <div className="why-banner__right">
+          <div className="why-feature">
+            <div className="why-feature__icon">
+              <div className="why-feature__icon-inner">💼</div>
+            </div>
+            <div className="why-feature__text">
+              <h4>Experienced</h4>
+              <p>Morbi nec finibus misd</p>
+            </div>
+          </div>
+
+          <div className="why-feature why-feature--middle">
+            <div className="why-feature__icon">
+              <div className="why-feature__icon-inner">📈</div>
+            </div>
+            <div className="why-feature__text">
+              <h4>Convenience</h4>
+              <p>Morbi nec finibus misd</p>
+            </div>
+          </div>
+
+          <div className="why-feature">
+            <div className="why-feature__icon">
+              <div className="why-feature__icon-inner">👥</div>
+            </div>
+            <div className="why-feature__text">
+              <h4>Professional</h4>
+              <p>Morbi nec finibus misd</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ====== Carousel Section (unchanged) ====== */
 function Ws2Carousel() {
   const baseCards = useMemo(
     () => [
@@ -180,7 +237,6 @@ function Ws2Carousel() {
     return () => node?.removeEventListener("transitionend", handler);
   }, [index, perView, extendedCards.length]);
 
-  // autoplay (move one card every 2 seconds)
   useEffect(() => {
     const id = setInterval(() => move(1), 2000);
     return () => clearInterval(id);
@@ -211,24 +267,47 @@ function Ws2Carousel() {
           ))}
         </div>
 
-        {/* <div className="ws2-controls">
-          <button
-            type="button"
-            className="ws2-btn"
-            onClick={() => move(-1)}
-            aria-label="Previous"
-          >
-            &#8592;
-          </button>
-          <button
-            type="button"
-            className="ws2-btn"
-            onClick={() => move(1)}
-            aria-label="Next"
-          >
-            &#8594;
-          </button>
-        </div> */}
+        <div className="ws2-progress-div">
+          <div className="ws2-progress-div1">
+            <img src="./assets/about-thumb-6.webp" alt="Clock Icon" />
+            <div className="ws2-progress-div-text-div2">
+              <p className="ws2-progress-div-text-p1">
+                <b> — We Do More For Your Business </b>
+              </p>
+              <h2 className="ws2-progress-div-text-h2">
+                Discover Tools for your Web Developement
+              </h2>
+              <img
+                src="./assets/Screenshot 2025-11-14 152519.png"
+                alt="Signature"
+                className="ws2-progress-div-img1"
+              />
+              <br />
+              <p className="ws2-progress-div-p1">
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting<br />
+                industry when an unknown printer took a galley of type and
+                scrambled<br />
+                it to make.
+              </p>
+              <img
+                src="./assets/Screenshot 2025-11-14 152719.png"
+                alt="Signature"
+                className="ws2-progress-div-img2"
+              />
+              <p className="ws2-progress-div-p2">
+                Lorem Ipsum is simply dummy text of the printing and
+                typesetting<br />
+                industry when an unknown printer took a galley of type and
+                scrambled<br />
+                it to make.
+              </p>
+              <button className="Whyservicestwo-section-content-btn2">
+                <b> Learn More </b>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
