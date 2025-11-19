@@ -6,7 +6,6 @@ function Whyservicesthree() {
   return (
     <>
       <Servicesone />
-
       <section className="why-three-wrapper">
         <div className="why-three-grid">
 
@@ -51,17 +50,33 @@ function Whyservicesthree() {
           <div>
             <div className="Whyservicesthree-center-image-divone">
                 <img
-                  src="./assets/information-thumb-1.webp"
+                  src="./assets/information-thumb-2.webp"
                   alt="Why Choose Us"
-                  className="Whyservicesthree-main-image"
+                  className="Whyservicesthree-main-image-1"
                 />
 
                 <img
-                  src="./assets/information-thumb-2.webp"
+                  src="./assets/information-thumb-1.webp"
                   alt="Why Choose Us"
-                  className="Whyservicesthree-main-image"
+                  className="Whyservicesthree-main-image-2"
                 />
+                <img
+              src="./assets/iwetechs.png" 
+              alt="iwetechs logo"
+              className="Whyservicesthree-main-image-4"
+            />
             </div>
+          </div>
+
+          <div>
+            <img
+              src="./assets/circlelogo.png" 
+              alt="iwetechs logo"
+              className="Whyservicesthree-main-image-3"
+            />
+          </div>
+          <div>
+            
           </div>
 
         </div>
