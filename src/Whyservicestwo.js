@@ -1,7 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./Services.css";
 import Servicesone from "./Servicesone";
+<<<<<<< HEAD
 import Footer from "./Footer";
+=======
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f
 
 function Whyservicestwo() {
   return (
@@ -48,6 +51,14 @@ function Whyservicestwo() {
         </div>
 
         <div className="Whyservicestwo-section-content-signature">
+<<<<<<< HEAD
+=======
+          {/* <img
+            src="./assets/service-item-1.webp"
+            alt="Signature"
+            className="Whyservicestwo-section-content-signature-img"
+          /> */}
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f
           <p className="Whyservicestwo-section-content-signature-p1">
             <b> . </b>
           </p>
@@ -56,15 +67,19 @@ function Whyservicestwo() {
 
       {/* ===== Autoplay Infinite Slider ===== */}
       <Ws2Carousel />
+<<<<<<< HEAD
 
       {/* ====== NEW Purple Banner Section Added ====== */}
       <WhyServicesBanner />
 
       <Footer />
+=======
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f
     </>
   );
 }
 
+<<<<<<< HEAD
 /* ===========================================================
    NEW COMPONENT SECTION YOU REQUESTED
 =========================================================== */
@@ -122,6 +137,9 @@ export function WhyServicesBanner() {
 }
 
 /* ====== Carousel Section (unchanged) ====== */
+=======
+/* ======= Carousel Component ======= */
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f
 function Ws2Carousel() {
   const baseCards = useMemo(
     () => [
@@ -237,6 +255,10 @@ function Ws2Carousel() {
     return () => node?.removeEventListener("transitionend", handler);
   }, [index, perView, extendedCards.length]);
 
+<<<<<<< HEAD
+=======
+  // autoplay (move one card every 2 seconds)
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f
   useEffect(() => {
     const id = setInterval(() => move(1), 2000);
     return () => clearInterval(id);
@@ -267,6 +289,7 @@ function Ws2Carousel() {
           ))}
         </div>
 
+<<<<<<< HEAD
         <div className="ws2-progress-div">
           <div className="ws2-progress-div1">
             <img src="./assets/about-thumb-6.webp" alt="Clock Icon" />
@@ -308,9 +331,33 @@ function Ws2Carousel() {
             </div>
           </div>
         </div>
+=======
+        {/* <div className="ws2-controls">
+          <button
+            type="button"
+            className="ws2-btn"
+            onClick={() => move(-1)}
+            aria-label="Previous"
+          >
+            &#8592;
+          </button>
+          <button
+            type="button"
+            className="ws2-btn"
+            onClick={() => move(1)}
+            aria-label="Next"
+          >
+            &#8594;
+          </button>
+        </div> */}
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f
       </div>
     </section>
   );
 }
 
+<<<<<<< HEAD
 export default Whyservicestwo;
+=======
+export default Whyservicestwo;
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f

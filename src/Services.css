@@ -763,7 +763,10 @@
   max-width: 1280px;
   margin: 70px auto 110px;
   padding: 0 24px;
+<<<<<<< HEAD
   margin-top: 180px;
+=======
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f
 }
 
 .ws2-viewport {
@@ -983,6 +986,7 @@
     top: 14px;
   }
 }
+<<<<<<< HEAD
 
 
 
@@ -1413,3 +1417,5 @@
   margin-top: 30px;
   color: rgb(0, 98, 93);
 }
+=======
+>>>>>>> e2af841cfd35e29a572d0ee594c0bd257779114f
