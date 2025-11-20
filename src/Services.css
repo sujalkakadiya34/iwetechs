@@ -1295,7 +1295,7 @@
 .why-three-content {
   position: absolute;
   bottom: -50px;        /* perfect slight drop like screenshot */
-  left: 60px;           /* shifts the box to correct screenshot position */
+  left: 70px;           /* shifts the box to correct screenshot position */
   width: 370px;         /* exact width matching screenshot */
   padding: 35px 40px;   /* inner spacing similar to screenshot */
   background: #ffffff;
@@ -1372,24 +1372,44 @@
   float: left;
 }
 
+.Whyservicesthree-main-image-1{
+  margin-top: 280px;
+}
+
 .Whyservicesthree-main-image-2{
   margin-top: -100px;
   margin-left: 145px; 
 }
 
-.Whyservicesthree-main-image-1{
-  margin-top: 280px;
-}
-
 .Whyservicesthree-main-image-3{
-  margin-left: -300px;
-  margin-top: 320px;
-  /* rotate: 90deg; */
-
+  margin-left: -444px; 
+  width: 100px;
+  margin-bottom: 60px;
 }
 
 .Whyservicesthree-main-image-4{
-  margin-left: -30px;
-  margin-top: -420px;
-  rotate: 90deg;
+  width: 100px; 
+  margin-left: 45px;
+  margin-bottom: 150px;
+}
+
+.Whyservicesthree-center-image-divtwo{
+  /* float: right; */
+  margin-top: 280px;
+  margin-left: 120px;
+}
+
+.Whyservicesthree-center-image-divtwo-p1{
+  color: #04a3b8;
+}
+
+.Whyservicesthree-center-image-divtwo-h1{
+  font-size: 41px;
+  line-height: 50px;
+}
+
+.Whyservicesthree-center-image-divtwo-p2{
+  font-size: 22px;
+  margin-top: 30px;
+  color: rgb(0, 98, 93);
 }

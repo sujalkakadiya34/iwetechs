@@ -56,27 +56,30 @@ function Whyservicesthree() {
                 />
 
                 <img
+                  src="./assets/iwetechs-square.png"
+                  alt="Why Choose Us"
+                  className="Whyservicesthree-main-image-4"
+                />
+
+                <img
                   src="./assets/information-thumb-1.webp"
                   alt="Why Choose Us"
                   className="Whyservicesthree-main-image-2"
                 />
+
                 <img
-              src="./assets/iwetechs.png" 
-              alt="iwetechs logo"
-              className="Whyservicesthree-main-image-4"
-            />
+                  src="./assets/iwetechs-square.png"
+                  alt="Why Choose Us"
+                  className="Whyservicesthree-main-image-3"
+                />
             </div>
           </div>
 
-          <div>
-            <img
-              src="./assets/circlelogo.png" 
-              alt="iwetechs logo"
-              className="Whyservicesthree-main-image-3"
-            />
-          </div>
-          <div>
-            
+          <div className="Whyservicesthree-center-image-divtwo"> 
+             <p className="Whyservicesthree-center-image-divtwo-p1"><b> — Get to Know Us </b></p>
+             <h1 className="Whyservicesthree-center-image-divtwo-h1">Infetech Leading in IT <br></br> Technology Market</h1>
+             <p className="Whyservicesthree-center-image-divtwo-p2"><b>Proin est lacus,sagittis lobortis iaculise get.</b></p>
+             <p className="Whyservicesthree-center-image-divtwo-p3">There are many variations of passages of lorem free market to available, but the majority have alteration in some form, by injected humour, or randomised words.</p>
           </div>
 
         </div>
