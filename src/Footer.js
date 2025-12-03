@@ -32,11 +32,11 @@ function Footer() {
         <div className="footer-col">
           <h3>Links</h3>
           <ul className="footer-col-ul">
-            <li><a href="">About us</a></li>
-            <li><a href="">Meet our Team</a></li>
-            <li><a href="">News & Media</a></li>
-            <li><a href="">Our Projects</a></li>
-            <li><a href="">Contacts</a></li>
+            <li><a href="https://iwetechs.vercel.app/">About us</a></li>
+            <li><a href="https://iwetechs.vercel.app/">Meet our Team</a></li>
+            <li><a href="https://iwetechs.vercel.app/">News & Media</a></li>
+            <li><a href="https://iwetechs.vercel.app/">Our Projects</a></li>
+            <li><a href="https://iwetechs.vercel.app/">Contacts</a></li>
           </ul>
         </div>
            

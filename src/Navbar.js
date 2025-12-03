@@ -24,7 +24,6 @@ function Navbar({ alertTrigger }) {
         }, 300);
       }
     }
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
